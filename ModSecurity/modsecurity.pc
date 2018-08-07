@@ -1,0 +1,10 @@
+prefix=/usr/local/modsecurity
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: ModSecurity
+Description: ModSecurity API
+Version: 3.0.2
+Cflags: -I${prefix}/include/modsecurity
+Libs: -L${exec_prefix}/lib -lmodsecurity

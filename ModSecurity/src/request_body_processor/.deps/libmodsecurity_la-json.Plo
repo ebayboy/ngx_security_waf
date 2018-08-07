@@ -1,0 +1,4 @@
+request_body_processor/libmodsecurity_la-json.lo: \
+ request_body_processor/json.cc /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:
