@@ -25,6 +25,9 @@ build_nginx_modules(){
     cd nginx
     ./configure --add-dynamic-module=../ModSecurity-nginx
     make modules
+    if [ ! -d "$NGX_MODULES_PATH" ];then
+        mkdir -p $NGX_MODULES_PATH
+    fi
     cp objs/ngx_http_modsecurity_module.so $NGX_MODULES_PATH
     cd -
 }
