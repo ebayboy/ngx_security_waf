@@ -2,20 +2,22 @@
 
 CPU_COUNT=`cat /proc/cpuinfo | grep processor | wc -l`
 
-MOD_PATH="/usr/local/modsecurity"
+MOD_PATH="/usr/local/nginx/modsecurity"
 NGX_MODULES_PATH="/usr/local/nginx/modules"
 
 NGX_ERR_LOG_PATH="/usr/local/nginx/logs/error.log"
 NGX_ACCESS_LOG_PATH="/usr/local/nginx/logs/access.log"
 
 NGX_PATH="/usr/local/nginx"
+NGX_BIN_PATH="/usr/local/nginx/sbin/"
 NGX_CONF_PATH="/usr/local/nginx/conf"
+NGX_CONF_FILE_PATH="/usr/local/nginx/conf/nginx.conf"
 NGX_PID_PATH="/usr/local/nginx/logs/nginx.pid"
 NGX_LOCK_PATH="/usr/local/nginx/logs/nginx.lock"
 
 build_mod_security(){
     cd ModSecurity
-    ./configure  --prefix=/usr/local/modsecurity 
+    ./configure  --prefix=$MOD_PATH
     make -j$CPU_COUNT
     make install
     cd -
@@ -23,8 +25,8 @@ build_mod_security(){
 
 build_nginx(){
     cd nginx
-    ./configure  --prefix=/usr/local/nginx \
-        --conf-path=${DEST}/conf/smartl7.conf \
+    ./configure  --prefix=$NGX_PATH \
+        --conf-path=$NGX_CONF_FILE_PATH \
 		--error-log-path=$NGX_ERR_LOG_PATH \
 		--http-log-path=$NGX_ACCESS_LOG_PATH \
 		--pid-path=$NGX_PID_PATH \
@@ -35,6 +37,7 @@ build_nginx(){
     make -j$CPU_COUNT
     make install
     cd -
+    cp control.sh $NGX_BIN_PATH
 }
 
 build_nginx_modules(){

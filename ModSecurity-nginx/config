@@ -55,14 +55,14 @@ else
     . auto/feature
 
     if [ $ngx_found = no ]; then
-        ngx_feature="ModSecurity library in /usr/local/modsecurity"
-        ngx_feature_path="/usr/local/modsecurity/include"
+        ngx_feature="ModSecurity library in /usr/local/nginx/modsecurity"
+        ngx_feature_path="/usr/local/nginx/modsecurity/include"
         if [ $NGX_RPATH = YES ]; then
-            ngx_feature_libs="-R/usr/local/modsecurity/lib -L/usr/local/modsecurity/lib -lmodsecurity"
+            ngx_feature_libs="-R/usr/local/nginx/modsecurity/lib -L/usr/local/nginx/modsecurity/lib -lmodsecurity"
         elif [ "$NGX_IGNORE_RPATH" != "YES" -a $NGX_SYSTEM = "Linux" ]; then
-            ngx_feature_libs="-Wl,-rpath,/usr/local/modsecurity/lib -L/usr/local/modsecurity/lib -lmodsecurity"
+            ngx_feature_libs="-Wl,-rpath,/usr/local/nginx/modsecurity/lib -L/usr/local/nginx/modsecurity/lib -lmodsecurity"
         else
-            ngx_feature_libs="-L/usr/local/modsecurity/lib -lmodsecurity"
+            ngx_feature_libs="-L/usr/local/nginx/modsecurity/lib -lmodsecurity"
         fi
 
         . auto/feature
