@@ -23173,7 +23173,7 @@ echo " Mandatory dependencies"
 echo -n "   + libInjection                                  ...."
 echo
 echo -n "   + SecLang tests                                 ...."
-echo 66c0bbe
+echo c0f5a9f
 
 echo " "
 echo " Optional dependencies"

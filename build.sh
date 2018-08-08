@@ -15,9 +15,15 @@ NGX_CONF_FILE_PATH="/usr/local/nginx/conf/nginx.conf"
 NGX_PID_PATH="/usr/local/nginx/logs/nginx.pid"
 NGX_LOCK_PATH="/usr/local/nginx/logs/nginx.lock"
 
+buid_GeoIP(){
+
+}
+
 build_mod_security(){
     cd ModSecurity
-    ./configure  --prefix=$MOD_PATH
+    ./build.sh
+    ./configure  --prefix=$MOD_PATH \
+    --with-geoip=/usr/local/nginx/GeoIP
     make -j$CPU_COUNT
     make install
     cd -
@@ -31,24 +37,16 @@ build_nginx(){
 		--http-log-path=$NGX_ACCESS_LOG_PATH \
 		--pid-path=$NGX_PID_PATH \
 		--lock-path=$NGX_LOCK_PATH \
-    	--with-ipv6 \
-		--with-debug	\
+        --with-http_ssl_module  \
+        --with-http_realip_module   \
+        --with-http_geoip_module    \
+        --with-http_stub_status_module  \
+        --add-dynamic-module=../ModSecurity-nginx
 		
     make -j$CPU_COUNT
     make install
     cd -
     cp control.sh $NGX_BIN_PATH
-}
-
-build_nginx_modules(){
-    cd nginx
-    ./configure --add-dynamic-module=../ModSecurity-nginx
-    make modules
-    if [ ! -d "$NGX_MODULES_PATH" ];then
-        mkdir -p $NGX_MODULES_PATH
-    fi
-    cp objs/ngx_http_modsecurity_module.so $NGX_MODULES_PATH
-    cd -
 }
 
 install_config(){
@@ -61,15 +59,12 @@ then
 elif [ "$1" == "nginx" ]
 then
     build_nginx
-elif [ "$1" == "modules" ]
-then
-    build_nginx_modules
 elif [ "$1" == "config" ]
 then
     install_config 
 else
     build_mod_security
     build_nginx
-    build_nginx_modules
+    build_config
 fi
 

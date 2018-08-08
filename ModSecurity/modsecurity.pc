@@ -1,4 +1,4 @@
-prefix=/usr/local/nginx/modsecurity
+prefix=/usr/local/modsecurity
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

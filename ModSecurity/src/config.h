@@ -80,7 +80,7 @@
 /* #undef MACOSX */
 
 /* Define if libcurl is available */
-/* #undef MSC_WITH_CURL */
+#define MSC_WITH_CURL 1
 
 /* Define if the operating system is NETBSD */
 /* #undef NETBSD */
