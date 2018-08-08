@@ -163,7 +163,8 @@ libmodsecurity_la-modsecurity.lo: modsecurity.cc \
  /usr/include/c++/4.8.2/bits/stl_multiset.h \
  ../headers/modsecurity/collection/collection.h \
  ../headers/modsecurity/debug_log.h ../src/config.h \
- /usr/include/libxml2/libxml/xmlschemas.h \
+ /usr/include/yajl/yajl_tree.h /usr/include/yajl/yajl_common.h \
+ /usr/include/yajl/yajl_gen.h /usr/include/libxml2/libxml/xmlschemas.h \
  /usr/include/libxml2/libxml/xmlversion.h \
  /usr/include/libxml2/libxml/xmlexports.h \
  /usr/include/libxml2/libxml/tree.h \
@@ -659,6 +660,12 @@ libmodsecurity_la-modsecurity.lo: modsecurity.cc \
 ../headers/modsecurity/debug_log.h:
 
 ../src/config.h:
+
+/usr/include/yajl/yajl_tree.h:
+
+/usr/include/yajl/yajl_common.h:
+
+/usr/include/yajl/yajl_gen.h:
 
 /usr/include/libxml2/libxml/xmlschemas.h:
 

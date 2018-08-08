@@ -55,7 +55,7 @@ build_nginx(){
     cp control.sh $NGX_BIN_PATH
 }
 
-install_config(){
+build_config(){
     cp -af conf/* $NGX_CONF_PATH
 }
 
@@ -70,10 +70,10 @@ then
     build_nginx
 elif [ "$1" == "config" ]
 then
-    install_config 
+    build_config 
 else
-    biuld_GeoIP
-    build_mod_security
+    build_GeoIP
+    build_Modsecurity
     build_nginx
     build_config
 fi

@@ -35,6 +35,9 @@ PATH: /usr/local/go/bin
 PATH: /root/golang/bin
 PATH: /usr/local/mongodb/bin
 PATH: /root/bin
+PATH: /usr/local/go/bin
+PATH: /root/golang/bin
+PATH: /usr/local/mongodb/bin
 
 
 ## ----------- ##
