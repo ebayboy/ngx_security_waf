@@ -1,0 +1,7 @@
+*.[oa]
+*.lo
+*.la
+*.deps
+.dirstamp
+.libs
+.swp
