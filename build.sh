@@ -15,15 +15,21 @@ NGX_CONF_FILE_PATH="/usr/local/nginx/conf/nginx.conf"
 NGX_PID_PATH="/usr/local/nginx/logs/nginx.pid"
 NGX_LOCK_PATH="/usr/local/nginx/logs/nginx.lock"
 
-buid_GeoIP(){
+GEOIP_PATH="/usr/local/nginx/GeoIP"
 
+build_GeoIP(){
+    cd vendor/GeoIP
+    ./configure  --prefix=$GEOIP_PATH 
+    make -j$CPU_COUNT
+    make install
+    cd -
 }
 
-build_mod_security(){
+build_Modsecurity(){
     cd ModSecurity
     ./build.sh
     ./configure  --prefix=$MOD_PATH \
-    --with-geoip=/usr/local/nginx/GeoIP
+    --with-geoip=$GEOIP_PATH
     make -j$CPU_COUNT
     make install
     cd -
@@ -53,9 +59,12 @@ install_config(){
     cp -af conf/* $NGX_CONF_PATH
 }
 
-if [ "$1" == "mod_security" ]
+if [ "$1" == "GeoIP" ]
 then
-    build_mod_security
+    build_GeoIP
+elif [ "$1" == "Modsecurity" ]
+then
+    build_Modsecurity
 elif [ "$1" == "nginx" ]
 then
     build_nginx
@@ -63,6 +72,7 @@ elif [ "$1" == "config" ]
 then
     install_config 
 else
+    biuld_GeoIP
     build_mod_security
     build_nginx
     build_config
