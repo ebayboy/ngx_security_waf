@@ -47,7 +47,9 @@ build_nginx(){
         --with-http_realip_module   \
         --with-http_geoip_module    \
         --with-http_stub_status_module  \
-        --add-dynamic-module=../ModSecurity-nginx
+        --add-dynamic-module=../ModSecurity-nginx   \
+        --add-module=../ngx_modules/nginx-sticky-module-ng  \
+        --add-module=../ngx_modules/nginx_upstream_check_module  
 		
     make -j$CPU_COUNT
     make install
