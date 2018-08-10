@@ -47,6 +47,20 @@ build_nginx(){
         --with-http_realip_module   \
         --with-http_geoip_module    \
         --with-http_stub_status_module  \
+        --with-http_ssl_module \
+        --with-http_realip_module   \
+        --with-http_mp4_module  \
+        --with-http_dav_module  \
+        --with-http_flv_module  \
+        --with-stream   \
+        --with-stream_realip_module \
+        --with-stream_ssl_module     \
+        --with-http_dav_module  \
+        --http-client-body-temp-path=$NGX_PATH/temp/client \
+        --http-proxy-temp-path=$NGX_PATH/temp/proxy   \
+        --http-fastcgi-temp-path=$NGX_PATH/temp/fcgi  \
+        --http-scgi-temp-path=$NGX_PATH/temp/scgi     \
+        --http-uwsgi-temp-path=$NGX_PATH/temp/uwsgi   \
         --with-openssl=../vendor/openssl \
         --add-dynamic-module=../ModSecurity-nginx   \
         --add-module=../ngx_modules/nginx-sticky-module-ng  \
