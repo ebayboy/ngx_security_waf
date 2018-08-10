@@ -6,7 +6,8 @@ TODO:
 2. 健康检查模块支持
 3. GEOIP模块支持
 4. 配置文件优化
-
+5. sticky模块支持
+6. healthcheck模块支持
 
 
 resourse:
@@ -15,4 +16,5 @@ git clone --depth 1 -b v3/master --single-branch https://github.com/SpiderLabs/M
 git clone --depth 1 https://github.com/SpiderLabs/ModSecurity-nginx.git
 wget https://raw.githubusercontent.com/SpiderLabs/ModSecurity/v3/master/modsecurity.conf-recommended
 git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git
+openssl: openssl-1.1.0h
 
