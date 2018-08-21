@@ -19,6 +19,7 @@ GEOIP_PATH="/usr/local/nginx/GeoIP"
 
 build_GeoIP(){
     cd vendor/GeoIP
+    autoreconf -f -i . autoreconf
     ./configure  --prefix=$GEOIP_PATH 
     make -j$CPU_COUNT
     make install
