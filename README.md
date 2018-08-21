@@ -2,12 +2,13 @@
 
 
 TODO:
-1. 流媒体模块支持
-2. 健康检查模块支持
 3. GEOIP模块支持
 4. 配置文件优化
+
+FINISH
+2 . 流媒体模块支持
+2. 健康检查模块支持
 5. sticky模块支持
-6. healthcheck模块支持
 
 
 resourse:
