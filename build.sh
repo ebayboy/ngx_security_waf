@@ -24,6 +24,7 @@ build_GeoIP(){
     make -j$CPU_COUNT
     make install
     cd -
+    cp -af vendor/GeoIP.dat  /usr/local/nginx/conf/
 }
 
 build_Modsecurity(){
