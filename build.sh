@@ -77,6 +77,10 @@ build_config(){
     cp -af conf/* $NGX_CONF_PATH
 }
 
+build_hLive(){
+    cp -af vendor/hLive/  /usr/local/nginx/html/ 
+}
+
 if [ "$1" == "GeoIP" ]
 then
     build_GeoIP
@@ -89,10 +93,14 @@ then
 elif [ "$1" == "config" ]
 then
     build_config 
+elif [ "$1" == "hLive" ]
+then
+    build_hLive 
 else
     build_GeoIP
     build_Modsecurity
     build_nginx
     build_config
+    build_hLive
 fi
 
