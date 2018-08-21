@@ -64,7 +64,8 @@ build_nginx(){
         --with-openssl=../vendor/openssl \
         --add-dynamic-module=../ModSecurity-nginx   \
         --add-module=../ngx_modules/nginx-sticky-module-ng  \
-        --add-module=../ngx_modules/nginx_upstream_check_module  
+        --add-module=../ngx_modules/nginx_upstream_check_module  \
+        --add-module=../ngx_modules/nginx-rtmp-module
 		
     make -j$CPU_COUNT
     make install
