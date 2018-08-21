@@ -177,7 +177,17 @@ operators/libmodsecurity_la-geo_lookup.lo: operators/geo_lookup.cc \
  ../headers/modsecurity/rules_exceptions.h \
  ../headers/modsecurity/actions/action.h \
  ../headers/modsecurity/audit_log.h ../src/utils/string.h \
- ../src/utils/regex.h /usr/include/pcre.h ../src/utils/geo_lookup.h
+ ../src/utils/regex.h /usr/include/pcre.h \
+ /usr/local/nginx/GeoIP/include/GeoIPCity.h \
+ /usr/local/nginx/GeoIP/include/GeoIP.h /usr/include/arpa/inet.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/sys/uio.h /usr/include/bits/uio.h \
+ /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
+ /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
+ /usr/include/asm-generic/socket.h /usr/include/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h /usr/include/bits/in.h \
+ /usr/include/sys/stat.h /usr/include/bits/stat.h \
+ ../src/utils/geo_lookup.h
 
 /usr/include/stdc-predef.h:
 
@@ -662,5 +672,39 @@ operators/libmodsecurity_la-geo_lookup.lo: operators/geo_lookup.cc \
 ../src/utils/regex.h:
 
 /usr/include/pcre.h:
+
+/usr/local/nginx/GeoIP/include/GeoIPCity.h:
+
+/usr/local/nginx/GeoIP/include/GeoIP.h:
+
+/usr/include/arpa/inet.h:
+
+/usr/include/netinet/in.h:
+
+/usr/include/sys/socket.h:
+
+/usr/include/sys/uio.h:
+
+/usr/include/bits/uio.h:
+
+/usr/include/bits/socket.h:
+
+/usr/include/bits/socket_type.h:
+
+/usr/include/bits/sockaddr.h:
+
+/usr/include/asm/socket.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/asm/sockios.h:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/bits/in.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/bits/stat.h:
 
 ../src/utils/geo_lookup.h:

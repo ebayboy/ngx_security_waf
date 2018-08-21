@@ -170,7 +170,10 @@ utils/libmodsecurity_la-ip_tree.lo: utils/ip_tree.cc \
  /usr/include/asm-generic/socket.h /usr/include/asm/sockios.h \
  /usr/include/asm-generic/sockios.h /usr/include/netinet/in.h \
  /usr/include/bits/in.h /usr/include/arpa/inet.h \
- ../src/utils/geo_lookup.h ../src/utils/https_client.h
+ ../src/utils/geo_lookup.h /usr/local/nginx/GeoIP/include/GeoIPCity.h \
+ /usr/local/nginx/GeoIP/include/GeoIP.h /usr/include/string.h \
+ /usr/include/sys/stat.h /usr/include/bits/stat.h \
+ ../src/utils/https_client.h
 
 /usr/include/stdc-predef.h:
 
@@ -641,5 +644,15 @@ utils/libmodsecurity_la-ip_tree.lo: utils/ip_tree.cc \
 /usr/include/arpa/inet.h:
 
 ../src/utils/geo_lookup.h:
+
+/usr/local/nginx/GeoIP/include/GeoIPCity.h:
+
+/usr/local/nginx/GeoIP/include/GeoIP.h:
+
+/usr/include/string.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/bits/stat.h:
 
 ../src/utils/https_client.h:

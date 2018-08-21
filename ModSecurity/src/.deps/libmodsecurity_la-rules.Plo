@@ -171,18 +171,11 @@ libmodsecurity_la-rules.lo: rules.cc /usr/include/stdc-predef.h \
  ../headers/modsecurity/rules_exceptions.h \
  ../headers/modsecurity/actions/action.h \
  ../headers/modsecurity/audit_log.h ../src/parser/driver.h \
- ../src/rule_script.h ../src/engine/lua.h /usr/include/lua.hpp \
- /usr/include/lua.h /usr/include/luaconf.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/lualib.h /usr/include/lauxlib.h \
- /usr/include/c++/4.8.2/cstring ../src/operators/operator.h \
- ../headers/modsecurity/rule_message.h ../src/run_time_string.h \
- ../src/variables/variable.h ../src/utils/string.h ../src/utils/regex.h \
- /usr/include/pcre.h ../src/actions/transformations/none.h \
+ ../src/rule_script.h ../src/engine/lua.h /usr/include/c++/4.8.2/cstring \
+ ../src/operators/operator.h ../headers/modsecurity/rule_message.h \
+ ../src/run_time_string.h ../src/variables/variable.h \
+ ../src/utils/string.h ../src/utils/regex.h /usr/include/pcre.h \
+ ../src/actions/transformations/none.h \
  ../src/actions/transformations/transformation.h ../src/actions/tag.h \
  ../src/actions/msg.h ../src/actions/log_data.h ../src/actions/severity.h \
  ../src/parser/seclang-parser.hh /usr/include/c++/4.8.2/iterator \
@@ -269,6 +262,11 @@ libmodsecurity_la-rules.lo: rules.cc /usr/include/stdc-predef.h \
  /usr/include/libxml2/libxml/xmlversion.h \
  /usr/include/libxml2/libxml/xmlexports.h \
  /usr/include/libxml2/libxml/tree.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  /usr/include/libxml2/libxml/xmlstring.h \
  /usr/include/libxml2/libxml/xmlregexp.h \
  /usr/include/libxml2/libxml/dict.h \
@@ -290,17 +288,19 @@ libmodsecurity_la-rules.lo: rules.cc /usr/include/stdc-predef.h \
  ../src/operators/validate_utf8_encoding.h ../src/operators/verify_cc.h \
  ../src/operators/verify_cpf.h ../src/operators/verify_ssn.h \
  ../src/operators/within.h ../src/utils/geo_lookup.h \
- ../src/utils/system.h ../src/variables/args_combined_size.h \
- ../src/variables/args_get.h ../src/variables/args_get_names.h \
- ../src/variables/args.h ../src/variables/args_names.h \
- ../src/variables/args_post.h ../src/variables/args_post_names.h \
- ../src/variables/auth_type.h ../src/variables/duration.h \
- ../src/variables/env.h ../src/variables/files_combined_size.h \
- ../src/variables/files.h ../src/variables/files_names.h \
- ../src/variables/files_sizes.h ../src/variables/files_tmp_content.h \
- ../src/variables/files_tmp_names.h ../src/variables/full_request.h \
- ../src/variables/full_request_length.h ../src/variables/geo.h \
- ../src/variables/highest_severity.h \
+ /usr/local/nginx/GeoIP/include/GeoIPCity.h \
+ /usr/local/nginx/GeoIP/include/GeoIP.h /usr/include/sys/stat.h \
+ /usr/include/bits/stat.h ../src/utils/system.h \
+ ../src/variables/args_combined_size.h ../src/variables/args_get.h \
+ ../src/variables/args_get_names.h ../src/variables/args.h \
+ ../src/variables/args_names.h ../src/variables/args_post.h \
+ ../src/variables/args_post_names.h ../src/variables/auth_type.h \
+ ../src/variables/duration.h ../src/variables/env.h \
+ ../src/variables/files_combined_size.h ../src/variables/files.h \
+ ../src/variables/files_names.h ../src/variables/files_sizes.h \
+ ../src/variables/files_tmp_content.h ../src/variables/files_tmp_names.h \
+ ../src/variables/full_request.h ../src/variables/full_request_length.h \
+ ../src/variables/geo.h ../src/variables/highest_severity.h \
  ../src/variables/inbound_data_error.h ../src/variables/matched_var.h \
  ../src/variables/matched_var_name.h ../src/variables/matched_vars.h \
  ../src/variables/matched_vars_names.h ../src/variables/modsec_build.h \
@@ -830,32 +830,6 @@ libmodsecurity_la-rules.lo: rules.cc /usr/include/stdc-predef.h \
 
 ../src/engine/lua.h:
 
-/usr/include/lua.hpp:
-
-/usr/include/lua.h:
-
-/usr/include/luaconf.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h:
-
-/usr/include/limits.h:
-
-/usr/include/bits/posix1_lim.h:
-
-/usr/include/bits/local_lim.h:
-
-/usr/include/linux/limits.h:
-
-/usr/include/bits/posix2_lim.h:
-
-/usr/include/bits/xopen_lim.h:
-
-/usr/include/lualib.h:
-
-/usr/include/lauxlib.h:
-
 /usr/include/c++/4.8.2/cstring:
 
 ../src/operators/operator.h:
@@ -1144,6 +1118,22 @@ libmodsecurity_la-rules.lo: rules.cc /usr/include/stdc-predef.h \
 
 /usr/include/libxml2/libxml/tree.h:
 
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
+
 /usr/include/libxml2/libxml/xmlstring.h:
 
 /usr/include/libxml2/libxml/xmlregexp.h:
@@ -1201,6 +1191,14 @@ libmodsecurity_la-rules.lo: rules.cc /usr/include/stdc-predef.h \
 ../src/operators/within.h:
 
 ../src/utils/geo_lookup.h:
+
+/usr/local/nginx/GeoIP/include/GeoIPCity.h:
+
+/usr/local/nginx/GeoIP/include/GeoIP.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/bits/stat.h:
 
 ../src/utils/system.h:
 

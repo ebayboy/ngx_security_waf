@@ -107,6 +107,9 @@ utils/libmodsecurity_la-geo_lookup.lo: utils/geo_lookup.cc \
  /usr/include/c++/4.8.2/utility /usr/include/c++/4.8.2/bits/stl_relops.h \
  /usr/include/c++/4.8.2/array /usr/include/c++/4.8.2/stdexcept \
  /usr/include/c++/4.8.2/bits/uses_allocator.h \
+ /usr/local/nginx/GeoIP/include/GeoIPCity.h \
+ /usr/local/nginx/GeoIP/include/GeoIP.h /usr/include/string.h \
+ /usr/include/sys/stat.h /usr/include/bits/stat.h \
  ../headers/modsecurity/transaction.h /usr/include/c++/4.8.2/ctime \
  /usr/include/c++/4.8.2/iomanip /usr/include/c++/4.8.2/locale \
  /usr/include/c++/4.8.2/bits/locale_facets_nonio.h \
@@ -478,6 +481,16 @@ utils/libmodsecurity_la-geo_lookup.lo: utils/geo_lookup.cc \
 /usr/include/c++/4.8.2/stdexcept:
 
 /usr/include/c++/4.8.2/bits/uses_allocator.h:
+
+/usr/local/nginx/GeoIP/include/GeoIPCity.h:
+
+/usr/local/nginx/GeoIP/include/GeoIP.h:
+
+/usr/include/string.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/bits/stat.h:
 
 ../headers/modsecurity/transaction.h:
 

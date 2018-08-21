@@ -19,3 +19,6 @@ wget https://raw.githubusercontent.com/SpiderLabs/ModSecurity/v3/master/modsecur
 git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git
 openssl: openssl-1.1.0h
 
+GeoIP:
+yum install GeoIP-devel 
+

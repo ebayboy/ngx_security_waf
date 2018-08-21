@@ -184,20 +184,12 @@ operators/libmodsecurity_la-operator.lo: operators/operator.cc \
  ../src/operators/fuzzy_hash.h ../src/operators/ge.h \
  ../src/operators/geo_lookup.h ../src/operators/gsblookup.h \
  ../src/operators/gt.h ../src/operators/inspect_file.h \
- ../src/engine/lua.h /usr/include/lua.hpp /usr/include/lua.h \
- /usr/include/luaconf.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/lualib.h /usr/include/lauxlib.h \
- ../src/operators/ip_match_f.h ../src/operators/ip_match_from_file.h \
- ../src/operators/ip_match.h ../src/utils/ip_tree.h \
- ../src/utils/msc_tree.h ../src/operators/le.h ../src/operators/lt.h \
- ../src/operators/no_match.h ../src/operators/pm_f.h \
- ../src/operators/pm_from_file.h ../src/operators/pm.h \
- ../src/utils/acmp.h /usr/include/c++/4.8.2/cstddef \
+ ../src/engine/lua.h ../src/operators/ip_match_f.h \
+ ../src/operators/ip_match_from_file.h ../src/operators/ip_match.h \
+ ../src/utils/ip_tree.h ../src/utils/msc_tree.h ../src/operators/le.h \
+ ../src/operators/lt.h ../src/operators/no_match.h \
+ ../src/operators/pm_f.h ../src/operators/pm_from_file.h \
+ ../src/operators/pm.h ../src/utils/acmp.h /usr/include/c++/4.8.2/cstddef \
  ../src/operators/rbl.h /usr/include/sys/socket.h /usr/include/sys/uio.h \
  /usr/include/bits/uio.h /usr/include/bits/socket.h \
  /usr/include/bits/socket_type.h /usr/include/bits/sockaddr.h \
@@ -212,6 +204,11 @@ operators/libmodsecurity_la-operator.lo: operators/operator.cc \
  /usr/include/libxml2/libxml/xmlversion.h \
  /usr/include/libxml2/libxml/xmlexports.h \
  /usr/include/libxml2/libxml/tree.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  /usr/include/libxml2/libxml/xmlstring.h \
  /usr/include/libxml2/libxml/xmlregexp.h \
  /usr/include/libxml2/libxml/dict.h \
@@ -744,32 +741,6 @@ operators/libmodsecurity_la-operator.lo: operators/operator.cc \
 
 ../src/engine/lua.h:
 
-/usr/include/lua.hpp:
-
-/usr/include/lua.h:
-
-/usr/include/luaconf.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h:
-
-/usr/include/limits.h:
-
-/usr/include/bits/posix1_lim.h:
-
-/usr/include/bits/local_lim.h:
-
-/usr/include/linux/limits.h:
-
-/usr/include/bits/posix2_lim.h:
-
-/usr/include/bits/xopen_lim.h:
-
-/usr/include/lualib.h:
-
-/usr/include/lauxlib.h:
-
 ../src/operators/ip_match_f.h:
 
 ../src/operators/ip_match_from_file.h:
@@ -851,6 +822,22 @@ operators/libmodsecurity_la-operator.lo: operators/operator.cc \
 /usr/include/libxml2/libxml/xmlexports.h:
 
 /usr/include/libxml2/libxml/tree.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
 
 /usr/include/libxml2/libxml/xmlstring.h:
 

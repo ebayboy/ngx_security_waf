@@ -168,13 +168,6 @@ actions/libmodsecurity_la-exec.lo: actions/exec.cc \
  /usr/include/c++/4.8.2/set /usr/include/c++/4.8.2/bits/stl_set.h \
  /usr/include/c++/4.8.2/bits/stl_multiset.h \
  ../headers/modsecurity/collection/collection.h ../src/engine/lua.h \
- /usr/include/lua.hpp /usr/include/lua.h /usr/include/luaconf.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/lualib.h /usr/include/lauxlib.h \
  /usr/include/c++/4.8.2/cstring /usr/include/string.h \
  ../src/utils/system.h ../headers/modsecurity/modsecurity.h \
  ../headers/modsecurity/debug_log.h
@@ -634,32 +627,6 @@ actions/libmodsecurity_la-exec.lo: actions/exec.cc \
 ../headers/modsecurity/collection/collection.h:
 
 ../src/engine/lua.h:
-
-/usr/include/lua.hpp:
-
-/usr/include/lua.h:
-
-/usr/include/luaconf.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h:
-
-/usr/include/limits.h:
-
-/usr/include/bits/posix1_lim.h:
-
-/usr/include/bits/local_lim.h:
-
-/usr/include/linux/limits.h:
-
-/usr/include/bits/posix2_lim.h:
-
-/usr/include/bits/xopen_lim.h:
-
-/usr/include/lualib.h:
-
-/usr/include/lauxlib.h:
 
 /usr/include/c++/4.8.2/cstring:
 
