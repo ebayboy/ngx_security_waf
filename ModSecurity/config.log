@@ -628,7 +628,7 @@ configure:13690: checking how to hardcode library paths into programs
 configure:13715: result: immediate
 configure:13809: checking for shl_load
 configure:13809: gcc -o conftest -g -O2   -lpcre conftest.c  >&5
-/tmp/cciboPx0.o: In function `main':
+/tmp/ccHTlHix.o: In function `main':
 /root/githubroot/ngx_security_waf/ModSecurity/conftest.c:59: undefined reference to `shl_load'
 collect2: error: ld returned 1 exit status
 configure:13809: $? = 1
@@ -744,7 +744,7 @@ configure: failed program was:
 configure:13847: result: no
 configure:13852: checking for dlopen
 configure:13852: gcc -o conftest -g -O2   -lpcre conftest.c  >&5
-/tmp/ccOOBer7.o: In function `main':
+/tmp/cc8gUFXs.o: In function `main':
 /root/githubroot/ngx_security_waf/ModSecurity/conftest.c:59: undefined reference to `dlopen'
 collect2: error: ld returned 1 exit status
 configure:13852: $? = 1
