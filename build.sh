@@ -36,6 +36,12 @@ build_Modsecurity(){
     cd -
 }
 
+build_libinjection(){
+    cd vendor/libinjection/src/
+    make all
+    cd -
+}
+
 build_nginx(){
     cd nginx
     ./configure  --prefix=$NGX_PATH \
@@ -66,7 +72,8 @@ build_nginx(){
         --add-dynamic-module=../ModSecurity-nginx   \
         --add-module=../ngx_modules/nginx-sticky-module-ng  \
         --add-module=../ngx_modules/nginx_upstream_check_module  \
-        --add-module=../ngx_modules/nginx-rtmp-module
+        --add-module=../ngx_modules/nginx-rtmp-module   \
+        --add-module=../ngx-libinjection
 		
     make -j$CPU_COUNT
     make install
@@ -89,6 +96,9 @@ then
 elif [ "$1" == "Modsecurity" ]
 then
     build_Modsecurity
+elif [ "$1" == "libinjection" ]
+then
+    build_libinjection
 elif [ "$1" == "nginx" ]
 then
     build_nginx
@@ -101,6 +111,7 @@ then
 else
     build_GeoIP
     build_Modsecurity
+    build_libinjection
     build_nginx
     build_config
     build_hLive
