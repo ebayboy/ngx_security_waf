@@ -18,6 +18,8 @@ git clone --depth 1 https://github.com/SpiderLabs/ModSecurity-nginx.git
 wget https://raw.githubusercontent.com/SpiderLabs/ModSecurity/v3/master/modsecurity.conf-recommended
 git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git
 openssl: openssl-1.1.0h
+ngx-libinjection: https://github.com/p0pr0ck5/ngx-libinjection
+libinjection: https://github.com/client9/libinjection
 
 GeoIP:
 yum install GeoIP-devel 
