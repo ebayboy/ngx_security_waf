@@ -86,7 +86,7 @@ status() {
 _status() {
     status
     if [[ $? -eq 0 ]]; then
-        state=`netstat -anpt | grep "/nginx" | awk '{ print $6 }'`
+        state=`netstat -anpt | grep "/nginx" | awk '{ print $4,$6 }'`
         echo $"Nginx server status is: $state"
     else
         echo "Nginx server is not running"
