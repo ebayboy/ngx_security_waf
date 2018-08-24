@@ -44,6 +44,8 @@ build_libinjection(){
 
 build_nginx(){
     cd nginx
+    export LIBINJECTION_PATH=../vendor/libinjection/src/
+    export LIBINJECTION_STATIC=yes
     ./configure  --prefix=$NGX_PATH \
         --conf-path=$NGX_CONF_FILE_PATH \
 		--error-log-path=$NGX_ERR_LOG_PATH \
@@ -73,7 +75,7 @@ build_nginx(){
         --add-module=../ngx_modules/nginx-sticky-module-ng  \
         --add-module=../ngx_modules/nginx_upstream_check_module  \
         --add-module=../ngx_modules/nginx-rtmp-module   \
-        --add-module=../ngx-libinjection
+        --add-module=../ngx_modules/ngx-libinjection
 		
     make -j$CPU_COUNT
     make install
