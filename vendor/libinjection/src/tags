@@ -1,0 +1,338 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AR	Makefile	/^AR=ar -r$/;"	m
+ATTR_NAME	libinjection_html5.h	/^    , ATTR_NAME$/;"	e	enum:html5_type
+ATTR_VALUE	libinjection_html5.h	/^    , ATTR_VALUE$/;"	e	enum:html5_type
+BLACKATTR	libinjection_xss.c	/^static stringtype_t BLACKATTR[] = {$/;"	v	file:
+BLACKTAG	libinjection_xss.c	/^static const char* BLACKTAG[] = {$/;"	v	file:
+CC	Makefile	/^CC=cc$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-Wall -Wextra -Werror -pedantic -ansi -g -O3 -fPIC$/;"	m
+CHARMAP	sqlparse_map.py	/^CHARMAP = [$/;"	v
+CHAR_BANG	libinjection_html5.c	16;"	d	file:
+CHAR_DASH	libinjection_html5.c	20;"	d	file:
+CHAR_DOUBLE	libinjection_html5.c	17;"	d	file:
+CHAR_DOUBLE	libinjection_sqli.c	35;"	d	file:
+CHAR_EOF	libinjection_html5.c	14;"	d	file:
+CHAR_EQUALS	libinjection_html5.c	23;"	d	file:
+CHAR_GT	libinjection_html5.c	24;"	d	file:
+CHAR_LT	libinjection_html5.c	22;"	d	file:
+CHAR_NULL	libinjection_html5.c	15;"	d	file:
+CHAR_NULL	libinjection_sqli.c	33;"	d	file:
+CHAR_PERCENT	libinjection_html5.c	18;"	d	file:
+CHAR_QUESTION	libinjection_html5.c	25;"	d	file:
+CHAR_RIGHTB	libinjection_html5.c	26;"	d	file:
+CHAR_SINGLE	libinjection_html5.c	19;"	d	file:
+CHAR_SINGLE	libinjection_sqli.c	34;"	d	file:
+CHAR_SLASH	libinjection_html5.c	21;"	d	file:
+CHAR_TICK	libinjection_html5.c	27;"	d	file:
+CHAR_TICK	libinjection_sqli.c	36;"	d	file:
+CLANG_VERSION	Makefile	/^CLANG_VERSION=$/;"	m
+DATA_STATE	libinjection_html5.h	/^  DATA_STATE$/;"	e	enum:html5_flags
+DATA_TEXT	libinjection_html5.h	/^    DATA_TEXT$/;"	e	enum:html5_type
+DOCTYPE	libinjection_html5.h	/^    , DOCTYPE$/;"	e	enum:html5_type
+FALSE	libinjection_sqli.c	30;"	d	file:
+FALSE	reader.c	14;"	d	file:
+FLAG_NONE	libinjection_sqli.h	/^    FLAG_NONE            = 0$/;"	e	enum:sqli_flags
+FLAG_QUOTE_DOUBLE	libinjection_sqli.h	/^    , FLAG_QUOTE_DOUBLE  = 4   \/* 1 << 2 *\/$/;"	e	enum:sqli_flags
+FLAG_QUOTE_NONE	libinjection_sqli.h	/^    , FLAG_QUOTE_NONE    = 1   \/* 1 << 0 *\/$/;"	e	enum:sqli_flags
+FLAG_QUOTE_SINGLE	libinjection_sqli.h	/^    , FLAG_QUOTE_SINGLE  = 2   \/* 1 << 1 *\/$/;"	e	enum:sqli_flags
+FLAG_SQL_ANSI	libinjection_sqli.h	/^    , FLAG_SQL_ANSI      = 8   \/* 1 << 3 *\/$/;"	e	enum:sqli_flags
+FLAG_SQL_MYSQL	libinjection_sqli.h	/^    , FLAG_SQL_MYSQL     = 16  \/* 1 << 4 *\/$/;"	e	enum:sqli_flags
+FOLD_DEBUG	libinjection_sqli.c	44;"	d	file:
+HEADERS	Makefile	/^HEADERS=libinjection.h libinjection_sqli.h libinjection_sqli_data.h libinjection_html5.h libinjection_xss.h$/;"	m
+INCLUDE_DIR	Makefile	/^INCLUDE_DIR=${PREFIX}\/include$/;"	m
+INSTALL	Makefile	/^INSTALL=install$/;"	m
+ISDIGIT	libinjection_sqli.c	39;"	d	file:
+KEYWORDS	sqlparse_map.py	/^KEYWORDS = {$/;"	v
+LD	Makefile	/^LD=ld$/;"	m
+LIBINJECTION_BEGIN_DECLS	libinjection.h	14;"	d
+LIBINJECTION_BEGIN_DECLS	libinjection.h	17;"	d
+LIBINJECTION_END_DECLS	libinjection.h	15;"	d
+LIBINJECTION_END_DECLS	libinjection.h	18;"	d
+LIBINJECTION_H	libinjection.h	11;"	d
+LIBINJECTION_HTML5	libinjection_html5.h	2;"	d
+LIBINJECTION_SQLI_DATA_H	libinjection_sqli_data.h	3;"	d
+LIBINJECTION_SQLI_H	libinjection_sqli.h	11;"	d
+LIBINJECTION_SQLI_MAX_TOKENS	libinjection_sqli.c	24;"	d	file:
+LIBINJECTION_SQLI_TOKEN_SIZE	libinjection_sqli.c	23;"	d	file:
+LIBINJECTION_VERSION	libinjection_sqli.c	21;"	d	file:
+LIBINJECTION_XSS	libinjection_xss.h	2;"	d
+LIBNAME	Makefile	/^LIBNAME=injection$/;"	m
+LIB_DIR	Makefile	/^LIB_DIR=${PREFIX}\/lib$/;"	m
+LOOKUP_FINGERPRINT	libinjection_sqli.h	/^    , LOOKUP_FINGERPRINT = 4$/;"	e	enum:lookup_type
+LOOKUP_OPERATOR	libinjection_sqli.h	/^    , LOOKUP_OPERATOR    = 3$/;"	e	enum:lookup_type
+LOOKUP_TYPE	libinjection_sqli.h	/^    , LOOKUP_TYPE        = 2$/;"	e	enum:lookup_type
+LOOKUP_WORD	libinjection_sqli.h	/^    LOOKUP_WORD        = 1$/;"	e	enum:lookup_type
+MODE_SQLI	reader.c	/^    MODE_SQLI,$/;"	e	enum:__anon2	file:
+MODE_XSS	reader.c	/^    MODE_XSS$/;"	e	enum:__anon2	file:
+OBJECTS	Makefile	/^OBJECTS=libinjection_sqli.o \\$/;"	m
+PREFIX	Makefile	/^PREFIX=\/usr\/local$/;"	m
+PermuteFingerprints	make_parens.py	/^class PermuteFingerprints(object):$/;"	c
+RMAP	fingerprints2sqli.py	/^RMAP = {$/;"	v
+SAMPLES	Makefile	/^SAMPLES=html5 sqli fptool$/;"	m
+SHAREDLIB	Makefile	/^SHAREDLIB=lib${LIBNAME}.${SHAREDLIB_SUFFIX}$/;"	m
+SHAREDLIB_SUFFIX	Makefile	/^SHAREDLIB_SUFFIX=so$/;"	m
+SOURCES	Makefile	/^SOURCES=libinjection_sqli.c \\$/;"	m
+STATICLIB	Makefile	/^STATICLIB=lib${LIBNAME}.${STATICLIB_SUFFIX}$/;"	m
+STATICLIB_SUFFIX	Makefile	/^STATICLIB_SUFFIX=a$/;"	m
+TAG_CLOSE	libinjection_html5.h	/^    , TAG_CLOSE$/;"	e	enum:html5_type
+TAG_COMMENT	libinjection_html5.h	/^    , TAG_COMMENT$/;"	e	enum:html5_type
+TAG_DATA	libinjection_html5.h	/^    , TAG_DATA$/;"	e	enum:html5_type
+TAG_NAME_CLOSE	libinjection_html5.h	/^    , TAG_NAME_CLOSE$/;"	e	enum:html5_type
+TAG_NAME_OPEN	libinjection_html5.h	/^    , TAG_NAME_OPEN$/;"	e	enum:html5_type
+TAG_NAME_SELFCLOSE	libinjection_html5.h	/^    , TAG_NAME_SELFCLOSE$/;"	e	enum:html5_type
+TESTDRIVERS	Makefile	/^TESTDRIVERS=reader testdriver testspeedxss testspeedsqli$/;"	m
+TRACE	libinjection_html5.c	10;"	d	file:
+TRACE	libinjection_html5.c	8;"	d	file:
+TRUE	libinjection_sqli.c	27;"	d	file:
+TRUE	reader.c	11;"	d	file:
+TYPE_ATTR_INDIRECT	libinjection_xss.c	/^    , TYPE_ATTR_INDIRECT  \/* attribute *name* is given in *value* *\/$/;"	e	enum:attribute	file:
+TYPE_ATTR_URL	libinjection_xss.c	/^    , TYPE_ATTR_URL   \/* attribute value takes a URL-like object *\/$/;"	e	enum:attribute	file:
+TYPE_BACKSLASH	libinjection_sqli.c	/^    , TYPE_BACKSLASH   = (int)'\\\\'$/;"	e	enum:__anon3	file:
+TYPE_BAREWORD	libinjection_sqli.c	/^    , TYPE_BAREWORD    = (int)'n'$/;"	e	enum:__anon3	file:
+TYPE_BLACK	libinjection_xss.c	/^    , TYPE_BLACK     \/* ban always *\/$/;"	e	enum:attribute	file:
+TYPE_COLLATE	libinjection_sqli.c	/^    , TYPE_COLLATE     = (int)'A'$/;"	e	enum:__anon3	file:
+TYPE_COLON	libinjection_sqli.c	/^    , TYPE_COLON       = (int)':'$/;"	e	enum:__anon3	file:
+TYPE_COMMA	libinjection_sqli.c	/^    , TYPE_COMMA       = (int)','$/;"	e	enum:__anon3	file:
+TYPE_COMMENT	libinjection_sqli.c	/^    , TYPE_COMMENT     = (int)'c'$/;"	e	enum:__anon3	file:
+TYPE_DOT	libinjection_sqli.c	/^    , TYPE_DOT         = (int)'.'$/;"	e	enum:__anon3	file:
+TYPE_EVIL	libinjection_sqli.c	/^    , TYPE_EVIL        = (int)'X'  \/* unparsable, abort  *\/$/;"	e	enum:__anon3	file:
+TYPE_EXPRESSION	libinjection_sqli.c	/^    , TYPE_EXPRESSION  = (int)'E'$/;"	e	enum:__anon3	file:
+TYPE_FINGERPRINT	libinjection_sqli.c	/^    , TYPE_FINGERPRINT = (int)'F'  \/* not really a token *\/$/;"	e	enum:__anon3	file:
+TYPE_FUNCTION	libinjection_sqli.c	/^    , TYPE_FUNCTION    = (int)'f'$/;"	e	enum:__anon3	file:
+TYPE_GROUP	libinjection_sqli.c	/^    , TYPE_GROUP       = (int)'B'$/;"	e	enum:__anon3	file:
+TYPE_KEYWORD	libinjection_sqli.c	/^    , TYPE_KEYWORD     = (int)'k'$/;"	e	enum:__anon3	file:
+TYPE_LEFTBRACE	libinjection_sqli.c	/^    , TYPE_LEFTBRACE   = (int)'{'$/;"	e	enum:__anon3	file:
+TYPE_LEFTPARENS	libinjection_sqli.c	/^    , TYPE_LEFTPARENS  = (int)'('$/;"	e	enum:__anon3	file:
+TYPE_LOGIC_OPERATOR	libinjection_sqli.c	/^    , TYPE_LOGIC_OPERATOR = (int)'&'$/;"	e	enum:__anon3	file:
+TYPE_NONE	libinjection_sqli.c	/^    TYPE_NONE        = 0$/;"	e	enum:__anon3	file:
+TYPE_NONE	libinjection_xss.c	/^    TYPE_NONE$/;"	e	enum:attribute	file:
+TYPE_NUMBER	libinjection_sqli.c	/^    , TYPE_NUMBER      = (int)'1'$/;"	e	enum:__anon3	file:
+TYPE_OPERATOR	libinjection_sqli.c	/^    , TYPE_OPERATOR    = (int)'o'$/;"	e	enum:__anon3	file:
+TYPE_RIGHTBRACE	libinjection_sqli.c	/^    , TYPE_RIGHTBRACE  = (int)'}'$/;"	e	enum:__anon3	file:
+TYPE_RIGHTPARENS	libinjection_sqli.c	/^    , TYPE_RIGHTPARENS = (int)')'  \/* not used? *\/$/;"	e	enum:__anon3	file:
+TYPE_SEMICOLON	libinjection_sqli.c	/^    , TYPE_SEMICOLON   = (int)';'$/;"	e	enum:__anon3	file:
+TYPE_SQLTYPE	libinjection_sqli.c	/^    , TYPE_SQLTYPE     = (int)'t'$/;"	e	enum:__anon3	file:
+TYPE_STRING	libinjection_sqli.c	/^    , TYPE_STRING      = (int)'s'$/;"	e	enum:__anon3	file:
+TYPE_STYLE	libinjection_xss.c	/^    , TYPE_STYLE$/;"	e	enum:attribute	file:
+TYPE_TSQL	libinjection_sqli.c	/^    , TYPE_TSQL        = (int)'T'  \/* TSQL start *\/$/;"	e	enum:__anon3	file:
+TYPE_UNION	libinjection_sqli.c	/^    , TYPE_UNION       = (int)'U'$/;"	e	enum:__anon3	file:
+TYPE_UNKNOWN	libinjection_sqli.c	/^    , TYPE_UNKNOWN     = (int)'?'$/;"	e	enum:__anon3	file:
+TYPE_VARIABLE	libinjection_sqli.c	/^    , TYPE_VARIABLE    = (int)'v'$/;"	e	enum:__anon3	file:
+VALUE_BACK_QUOTE	libinjection_html5.h	/^  , VALUE_BACK_QUOTE$/;"	e	enum:html5_flags
+VALUE_DOUBLE_QUOTE	libinjection_html5.h	/^  , VALUE_DOUBLE_QUOTE$/;"	e	enum:html5_flags
+VALUE_NO_QUOTE	libinjection_html5.h	/^  , VALUE_NO_QUOTE$/;"	e	enum:html5_flags
+VALUE_SINGLE_QUOTE	libinjection_html5.h	/^  , VALUE_SINGLE_QUOTE$/;"	e	enum:html5_flags
+__init__	make_parens.py	/^    def __init__(self):$/;"	m	class:PermuteFingerprints
+analyzer-checker	Makefile	/^	-Xanalyzer -analyzer-checker=alpha.core.BoolAssignment \\$/;"	m
+aslist	make_parens.py	/^    def aslist(self):$/;"	m	class:PermuteFingerprints
+attribute	libinjection_xss.c	/^typedef enum attribute {$/;"	g	file:
+attribute_t	libinjection_xss.c	/^} attribute_t;$/;"	t	typeref:enum:attribute	file:
+atype	libinjection_xss.c	/^    attribute_t atype;$/;"	m	struct:stringtype	file:
+bsearch_keyword_type	libinjection_sqli.c	/^static char bsearch_keyword_type(const char *key, size_t len,$/;"	f	file:
+char_is_white	libinjection_sqli.c	/^static int char_is_white(char ch) {$/;"	f	file:
+char_parse_map	libinjection_sqli_data.h	/^static const pt2Function char_parse_map[] = {$/;"	v
+count	libinjection_sqli.h	/^    int  count;$/;"	m	struct:libinjection_sqli_token
+cstrcasecmp	libinjection_sqli.c	/^static int cstrcasecmp(const char *a, const char *b, size_t n)$/;"	f	file:
+cstrcasecmp_with_null	libinjection_xss.c	/^static int cstrcasecmp_with_null(const char *a, const char *b, size_t n)$/;"	f	file:
+current	libinjection_sqli.h	/^    struct libinjection_sqli_token *current;$/;"	m	struct:libinjection_sqli_state	typeref:struct:libinjection_sqli_state::libinjection_sqli_token
+detect_mode_t	reader.c	/^} detect_mode_t;$/;"	t	typeref:enum:__anon2	file:
+dump	sqlparse_map.py	/^def dump():$/;"	f
+fingerprint	libinjection_sqli.h	/^    char fingerprint[8];$/;"	m	struct:libinjection_sqli_state
+fingerprint_to_sqli	fingerprints2sqli.py	/^def fingerprint_to_sqli():$/;"	f
+flag2delim	libinjection_sqli.c	/^static char flag2delim(int flag)$/;"	f	file:
+flags	libinjection_sqli.h	/^    int flags;$/;"	m	struct:libinjection_sqli_state
+g_expected	testdriver.c	/^static char g_expected[8096];$/;"	v	file:
+g_input	testdriver.c	/^static char g_input[8096];$/;"	v	file:
+g_test	testdriver.c	/^static char g_test[8096];$/;"	v	file:
+g_test_fail	reader.c	/^static int g_test_fail = 0;$/;"	v	file:
+g_test_ok	reader.c	/^static int g_test_ok = 0;$/;"	v	file:
+get_fingerprints	sqlparse_map.py	/^def get_fingerprints():$/;"	f
+gsHexDecodeMap	libinjection_xss.c	/^static const int gsHexDecodeMap[256] = {$/;"	v	file:
+h5_is_white	libinjection_html5.c	/^static int h5_is_white(char ch)$/;"	f	file:
+h5_skip_white	libinjection_html5.c	/^static int h5_skip_white(h5_state_t* hs)$/;"	f	file:
+h5_state	libinjection_html5.h	/^typedef struct h5_state {$/;"	s
+h5_state_after_attribute_name	libinjection_html5.c	/^static int h5_state_after_attribute_name(h5_state_t* hs)$/;"	f	file:
+h5_state_after_attribute_value_quoted_state	libinjection_html5.c	/^static int h5_state_after_attribute_value_quoted_state(h5_state_t* hs)$/;"	f	file:
+h5_state_attribute_name	libinjection_html5.c	/^static int h5_state_attribute_name(h5_state_t* hs)$/;"	f	file:
+h5_state_attribute_value_back_quote	libinjection_html5.c	/^int h5_state_attribute_value_back_quote(h5_state_t* hs)$/;"	f	file:
+h5_state_attribute_value_double_quote	libinjection_html5.c	/^int h5_state_attribute_value_double_quote(h5_state_t* hs)$/;"	f	file:
+h5_state_attribute_value_no_quote	libinjection_html5.c	/^static int h5_state_attribute_value_no_quote(h5_state_t* hs)$/;"	f	file:
+h5_state_attribute_value_quote	libinjection_html5.c	/^static int h5_state_attribute_value_quote(h5_state_t* hs, char qchar)$/;"	f	file:
+h5_state_attribute_value_single_quote	libinjection_html5.c	/^int h5_state_attribute_value_single_quote(h5_state_t* hs)$/;"	f	file:
+h5_state_before_attribute_name	libinjection_html5.c	/^static int h5_state_before_attribute_name(h5_state_t* hs)$/;"	f	file:
+h5_state_before_attribute_value	libinjection_html5.c	/^static int h5_state_before_attribute_value(h5_state_t* hs)$/;"	f	file:
+h5_state_bogus_comment	libinjection_html5.c	/^static int h5_state_bogus_comment(h5_state_t* hs)$/;"	f	file:
+h5_state_bogus_comment2	libinjection_html5.c	/^static int h5_state_bogus_comment2(h5_state_t* hs)$/;"	f	file:
+h5_state_cdata	libinjection_html5.c	/^static int h5_state_cdata(h5_state_t* hs)$/;"	f	file:
+h5_state_comment	libinjection_html5.c	/^static int h5_state_comment(h5_state_t* hs)$/;"	f	file:
+h5_state_data	libinjection_html5.c	/^static int h5_state_data(h5_state_t* hs)$/;"	f	file:
+h5_state_doctype	libinjection_html5.c	/^static int h5_state_doctype(h5_state_t* hs)$/;"	f	file:
+h5_state_end_tag_open	libinjection_html5.c	/^static int h5_state_end_tag_open(h5_state_t* hs)$/;"	f	file:
+h5_state_eof	libinjection_html5.c	/^static int h5_state_eof(h5_state_t* hs)$/;"	f	file:
+h5_state_markup_declaration_open	libinjection_html5.c	/^static int h5_state_markup_declaration_open(h5_state_t* hs)$/;"	f	file:
+h5_state_self_closing_start_tag	libinjection_html5.c	/^static int h5_state_self_closing_start_tag(h5_state_t* hs)$/;"	f	file:
+h5_state_t	libinjection_html5.h	/^} h5_state_t;$/;"	t	typeref:struct:h5_state
+h5_state_tag_name	libinjection_html5.c	/^static int h5_state_tag_name(h5_state_t* hs)$/;"	f	file:
+h5_state_tag_name_close	libinjection_html5.c	/^static int h5_state_tag_name_close(h5_state_t* hs)$/;"	f	file:
+h5_state_tag_open	libinjection_html5.c	/^static int h5_state_tag_open(h5_state_t* hs)$/;"	f	file:
+h5_type_to_string	html5_cli.c	/^const char* h5_type_to_string(enum html5_type x)$/;"	f
+h5_type_to_string	testdriver.c	/^const char* h5_type_to_string(enum html5_type x)$/;"	f
+html5_flags	libinjection_html5.h	/^enum html5_flags {$/;"	g
+html5_type	libinjection_html5.h	/^enum html5_type {$/;"	g
+html_decode_char_at	libinjection_xss.c	/^static int html_decode_char_at(const char* src, size_t len, size_t* consumed)$/;"	f	file:
+htmlencode_startswith	libinjection_xss.c	/^static int htmlencode_startswith(const char *a, const char *b, size_t n)$/;"	f	file:
+immutable	libinjection_sqli.h	/^%immutable;$/;"	m	struct:libinjection_sqli_state
+immutable	libinjection_sqli.h	/^%immutable;$/;"	m	struct:libinjection_sqli_token
+insert	make_parens.py	/^    def insert(self, fingerprint):$/;"	m	class:PermuteFingerprints
+is_backslash_escaped	libinjection_sqli.c	/^static int is_backslash_escaped(const char* end, const char* start)$/;"	f	file:
+is_black_attr	libinjection_xss.c	/^static attribute_t is_black_attr(const char* s, size_t len)$/;"	f	file:
+is_black_tag	libinjection_xss.c	/^static int is_black_tag(const char* s, size_t len)$/;"	f	file:
+is_black_url	libinjection_xss.c	/^static int is_black_url(const char* s, size_t len)$/;"	f	file:
+is_close	libinjection_html5.h	/^    int is_close;$/;"	m	struct:h5_state
+is_double_delim_escaped	libinjection_sqli.c	/^static size_t is_double_delim_escaped(const char* cur,  const char* end)$/;"	f	file:
+is_keyword	libinjection_sqli.c	/^static char is_keyword(const char* key, size_t len)$/;"	f	file:
+is_mysql_comment	libinjection_sqli.c	/^static size_t is_mysql_comment(const char *cs, const size_t len, size_t pos)$/;"	f	file:
+json	sqlparse2c.py	/^    import json$/;"	i
+json	sqlparse_map.py	/^import json$/;"	i
+keyword_t	libinjection_sqli_data.h	/^} keyword_t;$/;"	t	typeref:struct:__anon1
+len	libinjection_html5.h	/^    size_t len;$/;"	m	struct:h5_state
+len	libinjection_sqli.h	/^    size_t len;$/;"	m	struct:libinjection_sqli_token
+libinjection_h5_init	libinjection_html5.c	/^void libinjection_h5_init(h5_state_t* hs, const char* s, size_t len, enum html5_flags flags)$/;"	f
+libinjection_h5_next	libinjection_html5.c	/^int libinjection_h5_next(h5_state_t* hs)$/;"	f
+libinjection_is_sqli	libinjection_sqli.c	/^int libinjection_is_sqli(struct libinjection_sqli_state * sql_state)$/;"	f
+libinjection_is_xss	libinjection_xss.c	/^int libinjection_is_xss(const char* s, size_t len, int flags)$/;"	f
+libinjection_sqli	libinjection_sqli.c	/^int libinjection_sqli(const char* input, size_t slen, char fingerprint[])$/;"	f
+libinjection_sqli_blacklist	libinjection_sqli.c	/^int libinjection_sqli_blacklist(struct libinjection_sqli_state* sql_state)$/;"	f
+libinjection_sqli_callback	libinjection_sqli.c	/^void libinjection_sqli_callback(struct libinjection_sqli_state * sf, ptr_lookup_fn fn, void* userdata)$/;"	f
+libinjection_sqli_check_fingerprint	libinjection_sqli.c	/^int libinjection_sqli_check_fingerprint(struct libinjection_sqli_state* sql_state)$/;"	f
+libinjection_sqli_fingerprint	libinjection_sqli.c	/^const char* libinjection_sqli_fingerprint(struct libinjection_sqli_state * sql_state, int flags)$/;"	f
+libinjection_sqli_fold	libinjection_sqli.c	/^int libinjection_sqli_fold(struct libinjection_sqli_state * sf)$/;"	f
+libinjection_sqli_get_token	libinjection_sqli.c	/^libinjection_sqli_get_token(struct libinjection_sqli_state * sql_state, int i)$/;"	f
+libinjection_sqli_init	libinjection_sqli.c	/^void libinjection_sqli_init(struct libinjection_sqli_state * sf, const char *s, size_t len, int flags)$/;"	f
+libinjection_sqli_lookup_word	libinjection_sqli.c	/^char libinjection_sqli_lookup_word(struct libinjection_sqli_state *sql_state, int lookup_type,$/;"	f
+libinjection_sqli_not_whitelist	libinjection_sqli.c	/^int libinjection_sqli_not_whitelist(struct libinjection_sqli_state* sql_state)$/;"	f
+libinjection_sqli_reset	libinjection_sqli.c	/^void libinjection_sqli_reset(struct libinjection_sqli_state * sf, int flags)$/;"	f
+libinjection_sqli_state	libinjection_sqli.h	/^struct libinjection_sqli_state {$/;"	s
+libinjection_sqli_token	libinjection_sqli.h	/^struct libinjection_sqli_token {$/;"	s
+libinjection_sqli_tokenize	libinjection_sqli.c	/^int libinjection_sqli_tokenize(struct libinjection_sqli_state * sf)$/;"	f
+libinjection_version	libinjection_sqli.c	/^const char* libinjection_version()$/;"	f
+libinjection_xss	libinjection_xss.c	/^int libinjection_xss(const char* s, size_t len)$/;"	f
+lookup	libinjection_sqli.h	/^    ptr_lookup_fn lookup;$/;"	m	struct:libinjection_sqli_state
+lookup_type	libinjection_sqli.h	/^enum lookup_type {$/;"	g
+main	example1.c	/^int main(int argc, const char* argv[])$/;"	f
+main	fptool.c	/^int main(int argc, const char* argv[])$/;"	f
+main	html5_cli.c	/^int main(int argc, const char* argv[])$/;"	f
+main	make_parens.py	/^def main():$/;"	f
+main	reader.c	/^int main(int argc, const char *argv[])$/;"	f
+main	sqli_cli.c	/^int main(int argc, const char* argv[])$/;"	f
+main	test_speed_sqli.c	/^int main()$/;"	f
+main	test_speed_xss.c	/^int main()$/;"	f
+main	testdriver.c	/^int main(int argc, char** argv)$/;"	f
+memchr2	libinjection_sqli.c	/^memchr2(const char *haystack, size_t haystack_len, char c0, char c1)$/;"	f	file:
+modp_rtrim	reader.c	/^size_t modp_rtrim(char* str, size_t len)$/;"	f
+modp_rtrim	testdriver.c	/^size_t modp_rtrim(char* str, size_t len)$/;"	f
+modp_toprint	reader.c	/^void modp_toprint(char* str, size_t len)$/;"	f
+modp_url_decode	html5_cli.c	/^size_t modp_url_decode(char* dest, const char* s, size_t len)$/;"	f
+modp_url_decode	reader.c	/^size_t modp_url_decode(char* dest, const char* s, size_t len)$/;"	f
+my_memmem	libinjection_sqli.c	/^my_memmem(const char* haystack, size_t hlen, const char* needle, size_t nlen)$/;"	f	file:
+name	libinjection_xss.c	/^    const char* name;$/;"	m	struct:stringtype	file:
+parse_backslash	libinjection_sqli.c	/^static size_t parse_backslash(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_bstring	libinjection_sqli.c	/^static size_t parse_bstring(struct libinjection_sqli_state *sf)$/;"	f	file:
+parse_bword	libinjection_sqli.c	/^static size_t parse_bword(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_char	libinjection_sqli.c	/^static size_t parse_char(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_dash	libinjection_sqli.c	/^static size_t parse_dash(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_eol_comment	libinjection_sqli.c	/^static size_t parse_eol_comment(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_estring	libinjection_sqli.c	/^static size_t parse_estring(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_hash	libinjection_sqli.c	/^static size_t parse_hash(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_money	libinjection_sqli.c	/^static size_t parse_money(struct libinjection_sqli_state *sf)$/;"	f	file:
+parse_nqstring	libinjection_sqli.c	/^static size_t parse_nqstring(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_number	libinjection_sqli.c	/^static size_t parse_number(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_operator1	libinjection_sqli.c	/^static size_t parse_operator1(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_operator2	libinjection_sqli.c	/^static size_t parse_operator2(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_other	libinjection_sqli.c	/^static size_t parse_other(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_qstring	libinjection_sqli.c	/^static size_t parse_qstring(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_qstring_core	libinjection_sqli.c	/^static size_t parse_qstring_core(struct libinjection_sqli_state * sf, size_t offset)$/;"	f	file:
+parse_slash	libinjection_sqli.c	/^static size_t parse_slash(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_string	libinjection_sqli.c	/^static size_t parse_string(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_string_core	libinjection_sqli.c	/^static size_t parse_string_core(const char *cs, const size_t len, size_t pos,$/;"	f	file:
+parse_tick	libinjection_sqli.c	/^static size_t parse_tick(struct libinjection_sqli_state* sf)$/;"	f	file:
+parse_ustring	libinjection_sqli.c	/^static size_t parse_ustring(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_var	libinjection_sqli.c	/^static size_t parse_var(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_white	libinjection_sqli.c	/^static size_t parse_white(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_word	libinjection_sqli.c	/^static size_t parse_word(struct libinjection_sqli_state * sf)$/;"	f	file:
+parse_xstring	libinjection_sqli.c	/^static size_t parse_xstring(struct libinjection_sqli_state *sf)$/;"	f	file:
+permute	make_parens.py	/^    def permute(self, fp):$/;"	m	class:PermuteFingerprints
+pos	libinjection_html5.h	/^    size_t pos;$/;"	m	struct:h5_state
+pos	libinjection_sqli.h	/^    size_t pos;$/;"	m	struct:libinjection_sqli_state
+pos	libinjection_sqli.h	/^    size_t pos;$/;"	m	struct:libinjection_sqli_token
+print_html5_token	html5_cli.c	/^void print_html5_token(h5_state_t* hs)$/;"	f
+print_html5_token	testdriver.c	/^size_t print_html5_token(char* buf, size_t len, h5_state_t* hs)$/;"	f
+print_string	sqli_cli.c	/^void print_string(stoken_t* t)$/;"	f
+print_string	testdriver.c	/^size_t print_string(char* buf, size_t len, stoken_t* t)$/;"	f
+print_token	sqli_cli.c	/^void print_token(stoken_t *t) {$/;"	f
+print_token	testdriver.c	/^size_t print_token(char* buf, size_t len, stoken_t *t)$/;"	f
+print_var	sqli_cli.c	/^void print_var(stoken_t* t)$/;"	f
+print_var	testdriver.c	/^size_t print_var(char* buf, size_t len, stoken_t* t)$/;"	f
+pt2Function	libinjection_sqli_data.h	/^typedef size_t (*pt2Function)(sfilter *sf);$/;"	t
+ptr_html5_state	libinjection_html5.h	/^typedef int (*ptr_html5_state)(struct h5_state*);$/;"	t
+ptr_lookup_fn	libinjection_sqli.h	/^typedef char (*ptr_lookup_fn)(struct libinjection_sqli_state*, int lookuptype, const char* word, size_t len);$/;"	t
+read_file	testdriver.c	/^int read_file(const char* fname, int flags, int testtype)$/;"	f
+reason	libinjection_sqli.h	/^    int reason;$/;"	m	struct:libinjection_sqli_state
+reparse_as_mysql	libinjection_sqli.c	/^static int reparse_as_mysql(struct libinjection_sqli_state * sql_state)$/;"	f	file:
+s	libinjection_html5.h	/^    const char* s;$/;"	m	struct:h5_state
+s	libinjection_sqli.h	/^    const char *s;$/;"	m	struct:libinjection_sqli_state
+sfilter	libinjection_sqli.h	/^typedef struct libinjection_sqli_state sfilter;$/;"	t	typeref:struct:libinjection_sqli_state
+slen	libinjection_sqli.h	/^    size_t slen;$/;"	m	struct:libinjection_sqli_state
+sql_keywords	libinjection_sqli_data.h	/^static const keyword_t sql_keywords[] = {$/;"	v
+sql_keywords_sz	libinjection_sqli_data.h	/^static const size_t sql_keywords_sz = 9352;$/;"	v
+sqli_flags	libinjection_sqli.h	/^enum sqli_flags {$/;"	g
+sqli_token_types	libinjection_sqli.c	/^} sqli_token_types;$/;"	t	typeref:enum:__anon3	file:
+st_assign	libinjection_sqli.c	/^static void st_assign(stoken_t * st, const char stype,$/;"	f	file:
+st_assign_char	libinjection_sqli.c	/^static void st_assign_char(stoken_t * st, const char stype, size_t pos, size_t len,$/;"	f	file:
+st_clear	libinjection_sqli.c	/^static void st_clear(stoken_t * st)$/;"	f	file:
+st_copy	libinjection_sqli.c	/^static void st_copy(stoken_t * dest, const stoken_t * src)$/;"	f	file:
+st_is_arithmetic_op	libinjection_sqli.c	/^static int st_is_arithmetic_op(const stoken_t* st)$/;"	f	file:
+st_is_unary_op	libinjection_sqli.c	/^static int st_is_unary_op(const stoken_t * st)$/;"	f	file:
+state	libinjection_html5.h	/^    ptr_html5_state state;$/;"	m	struct:h5_state
+stats_comment_c	libinjection_sqli.h	/^    int stats_comment_c;$/;"	m	struct:libinjection_sqli_state
+stats_comment_ddw	libinjection_sqli.h	/^     int stats_comment_ddw;$/;"	m	struct:libinjection_sqli_state
+stats_comment_ddx	libinjection_sqli.h	/^    int stats_comment_ddx;$/;"	m	struct:libinjection_sqli_state
+stats_comment_hash	libinjection_sqli.h	/^    int stats_comment_hash;$/;"	m	struct:libinjection_sqli_state
+stats_folds	libinjection_sqli.h	/^    int stats_folds;$/;"	m	struct:libinjection_sqli_state
+stats_tokens	libinjection_sqli.h	/^    int stats_tokens;$/;"	m	struct:libinjection_sqli_state
+stoken_t	libinjection_sqli.h	/^typedef struct libinjection_sqli_token stoken_t;$/;"	t	typeref:struct:libinjection_sqli_token
+str_close	libinjection_sqli.h	/^    char str_close;$/;"	m	struct:libinjection_sqli_token
+str_open	libinjection_sqli.h	/^    char str_open;$/;"	m	struct:libinjection_sqli_token
+streq	libinjection_sqli.c	/^static int streq(const char *a, const char *b)$/;"	f	file:
+stringtype	libinjection_xss.c	/^typedef struct stringtype {$/;"	s	file:
+stringtype_t	libinjection_xss.c	/^} stringtype_t;$/;"	t	typeref:struct:stringtype	file:
+strlencspn	libinjection_sqli.c	/^strlencspn(const char *s, size_t len, const char *accept)$/;"	f	file:
+strlenspn	libinjection_sqli.c	/^strlenspn(const char *s, size_t len, const char *accept)$/;"	f	file:
+subprocess	fingerprints2sqli.py	/^import subprocess$/;"	i
+syntax_merge_words	libinjection_sqli.c	/^static int syntax_merge_words(struct libinjection_sqli_state * sf,stoken_t * a, stoken_t * b)$/;"	f	file:
+sys	make_parens.py	/^import sys$/;"	i
+sys	sqlparse2c.py	/^import sys$/;"	i
+sys	sqlparse_map.py	/^    import sys$/;"	i
+testIsSQL	test_speed_sqli.c	/^int testIsSQL(void)$/;"	f
+testIsSQL	test_speed_xss.c	/^int testIsSQL(void)$/;"	f
+test_positive	reader.c	/^void test_positive(FILE * fd, const char *fname, detect_mode_t mode,$/;"	f
+toc	sqlparse2c.py	/^def toc(obj):$/;"	f
+token_len	libinjection_html5.h	/^    size_t token_len;$/;"	m	struct:h5_state
+token_start	libinjection_html5.h	/^    const char* token_start;$/;"	m	struct:h5_state
+token_type	libinjection_html5.h	/^    enum html5_type token_type;$/;"	m	struct:h5_state	typeref:enum:h5_state::html5_type
+tokenvec	libinjection_sqli.h	/^    struct libinjection_sqli_token tokenvec[8];$/;"	m	struct:libinjection_sqli_state	typeref:struct:libinjection_sqli_state::libinjection_sqli_token
+type	libinjection_sqli.h	/^    char type;$/;"	m	struct:libinjection_sqli_token
+type	libinjection_sqli_data.h	/^    char type;$/;"	m	struct:__anon1
+urlcharmap	html5_cli.c	/^int urlcharmap(char ch) {$/;"	f
+urlcharmap	reader.c	/^int urlcharmap(char ch) {$/;"	f
+usage	reader.c	/^static void usage(const char* argv[])$/;"	f	file:
+usage	sqli_cli.c	/^void usage() {$/;"	f
+userdata	libinjection_sqli.h	/^    void*         userdata;$/;"	m	struct:libinjection_sqli_state
+val	libinjection_sqli.h	/^    char val[32];$/;"	m	struct:libinjection_sqli_token
+validate	make_parens.py	/^    def validate(self, s):$/;"	m	class:PermuteFingerprints
+word	libinjection_sqli_data.h	/^    const char *word;$/;"	m	struct:__anon1
