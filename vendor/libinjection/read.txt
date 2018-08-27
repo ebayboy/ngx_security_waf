@@ -1,0 +1,3 @@
+
+运行测试用例
+./src/reader ./tests/test-sqli-0*.txt
