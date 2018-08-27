@@ -2324,7 +2324,10 @@ int libinjection_sqli(const char* input, size_t slen, char fingerprint[])
     }
 
     for (i=0; i< sizeof(state.tokenvec)/sizeof(struct libinjection_sqli_token); i++) {
-        fprintf(stderr, "i:[%d] val[%s] type[%c]\n", i, state.tokenvec[i].val, state.tokenvec[i].type);
+        if (state.tokenvec[i].len > 0) {
+            fprintf(stderr, "%s:%d i:[%d] val[%s] type[%c]\n", 
+                    __func__, __LINE__, i, state.tokenvec[i].val, state.tokenvec[i].type);
+        }
     }
 
     fprintf(stderr, "%s:%d state.fingerprint[%s]\n", __func__, __LINE__, state.fingerprint);
