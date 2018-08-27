@@ -2312,6 +2312,7 @@ int libinjection_is_sqli(struct libinjection_sqli_state * sql_state)
 int libinjection_sqli(const char* input, size_t slen, char fingerprint[])
 {
     int issqli;
+    unsigned int i; 
     struct libinjection_sqli_state state;
 
     libinjection_sqli_init(&state, input, slen, 0);
@@ -2321,5 +2322,12 @@ int libinjection_sqli(const char* input, size_t slen, char fingerprint[])
     } else {
         fingerprint[0] = '\0';
     }
+
+    for (i=0; i< sizeof(state.tokenvec)/sizeof(struct libinjection_sqli_token); i++) {
+        fprintf(stderr, "i:[%d] val[%s] type[%c]\n", i, state.tokenvec[i].val, state.tokenvec[i].type);
+    }
+
+    fprintf(stderr, "%s:%d state.fingerprint[%s]\n", __func__, __LINE__, state.fingerprint);
+
     return issqli;
 }
