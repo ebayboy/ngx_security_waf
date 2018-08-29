@@ -52,6 +52,11 @@ build_nginx(){
 		--http-log-path=$NGX_ACCESS_LOG_PATH \
 		--pid-path=$NGX_PID_PATH \
 		--lock-path=$NGX_LOCK_PATH \
+        --http-client-body-temp-path=$NGX_PATH/temp/client \
+        --http-proxy-temp-path=$NGX_PATH/temp/proxy   \
+        --http-fastcgi-temp-path=$NGX_PATH/temp/fcgi  \
+        --http-scgi-temp-path=$NGX_PATH/temp/scgi     \
+        --http-uwsgi-temp-path=$NGX_PATH/temp/uwsgi   \
         --with-http_ssl_module  \
         --with-http_realip_module   \
         --with-http_geoip_module    \
@@ -65,17 +70,13 @@ build_nginx(){
         --with-stream_realip_module \
         --with-stream_ssl_module     \
         --with-http_dav_module  \
-        --http-client-body-temp-path=$NGX_PATH/temp/client \
-        --http-proxy-temp-path=$NGX_PATH/temp/proxy   \
-        --http-fastcgi-temp-path=$NGX_PATH/temp/fcgi  \
-        --http-scgi-temp-path=$NGX_PATH/temp/scgi     \
-        --http-uwsgi-temp-path=$NGX_PATH/temp/uwsgi   \
         --with-openssl=../vendor/openssl \
-        --add-dynamic-module=../ModSecurity-nginx   \
         --add-module=../ngx_modules/nginx-sticky-module-ng  \
         --add-module=../ngx_modules/nginx_upstream_check_module  \
         --add-module=../ngx_modules/nginx-rtmp-module   \
-        --add-module=../ngx_modules/ngx-libinjection
+        --add-module=../ngx_modules/ngx-libinjection    \
+        --add-dynamic-module=../ModSecurity-nginx   \
+        --add-dynamic-module=../ngx_modules/nginx-ipip-module  
 		
     make -j$CPU_COUNT
     make install
