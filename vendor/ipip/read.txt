@@ -1,0 +1,10 @@
+加密及解密:
+
+
+压缩：
+tar czvf - lib|openssl des3 -salt -k passwd| dd of=lib.tar.gz
+
+解压：
+dd if=lib.tar.gz | openssl des3 -d -k passwd| tar xzvf - -C ./
+
+
