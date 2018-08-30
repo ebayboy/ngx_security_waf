@@ -85,6 +85,44 @@ build_nginx(){
     cp control.sh $NGX_BIN_PATH
 }
 
+build_nginx_min(){
+    cd nginx
+    ./configure  --prefix=$NGX_PATH \
+        --conf-path=$NGX_CONF_FILE_PATH \
+		--error-log-path=$NGX_ERR_LOG_PATH \
+		--http-log-path=$NGX_ACCESS_LOG_PATH \
+		--pid-path=$NGX_PID_PATH \
+		--lock-path=$NGX_LOCK_PATH \
+        --http-client-body-temp-path=$NGX_PATH/temp/client \
+        --http-proxy-temp-path=$NGX_PATH/temp/proxy   \
+        --http-fastcgi-temp-path=$NGX_PATH/temp/fcgi  \
+        --http-scgi-temp-path=$NGX_PATH/temp/scgi     \
+        --http-uwsgi-temp-path=$NGX_PATH/temp/uwsgi   \
+        --with-http_ssl_module  \
+        --with-http_realip_module   \
+        --with-http_geoip_module    \
+        --with-http_stub_status_module  \
+        --with-http_ssl_module \
+        --with-http_realip_module   \
+        --with-http_mp4_module  \
+        --with-http_dav_module  \
+        --with-http_flv_module  \
+        --with-stream   \
+        --with-stream_realip_module \
+        --with-stream_ssl_module     \
+        --with-http_dav_module  \
+        --with-openssl=../vendor/openssl \
+        --add-module=../ngx_modules/nginx-sticky-module-ng  \
+        --add-module=../ngx_modules/nginx_upstream_check_module  \
+        --add-module=../ngx_modules/nginx-rtmp-module   
+		
+    make -j$CPU_COUNT
+    make install
+    cd -
+    mkdir -p /usr/local/nginx/temp/client
+    cp control.sh $NGX_BIN_PATH
+}
+
 build_config(){
     cp -af conf/* $NGX_CONF_PATH
 }
@@ -111,6 +149,14 @@ then
 elif [ "$1" == "hLive" ]
 then
     build_hLive 
+elif [ "$1" == "min" ]
+then
+    build_nginx_min
+    build_config
+    build_hLive
+elif [ "$1" == "nginx_min" ]
+then
+    build_nginx_min
 else
     build_GeoIP
     build_Modsecurity
