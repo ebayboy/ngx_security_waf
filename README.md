@@ -6,9 +6,9 @@ TODO:
 4. 配置文件优化
 
 FINISH
-2 . 流媒体模块支持
-2. 健康检查模块支持
-5. sticky模块支持
+流媒体模块支持
+健康检查模块支持
+sticky模块支持
 
 
 resourse:
@@ -23,4 +23,14 @@ libinjection: https://github.com/client9/libinjection
 
 GeoIP:
 yum install GeoIP-devel 
+
+
+
+直播平台：
+
+推流：
+OBS Studio
+
+web 观看
+http://192.168.137.101:81/hLive/
 

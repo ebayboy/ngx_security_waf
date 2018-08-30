@@ -76,7 +76,7 @@ build_nginx(){
         --add-module=../ngx_modules/nginx-rtmp-module   \
         --add-module=../ngx_modules/ngx-libinjection    \
         --add-dynamic-module=../ModSecurity-nginx   \
-        --add-dynamic-module=../ngx_modules/nginx-ipip-module  
+        --add-module=../ngx_modules/nginx-ipip-module  
 		
     make -j$CPU_COUNT
     make install

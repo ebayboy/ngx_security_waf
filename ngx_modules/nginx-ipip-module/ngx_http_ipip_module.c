@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  *
-  */
+ */
 #include <stdio.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -118,7 +118,7 @@ struct DBContext* init_db(const char* ipdb, int* error_code, ngx_conf_t *cf) {
     fseek(file, 0, SEEK_END);
     long size = ftell(file);
     fseek(file, 0, SEEK_SET);
-    
+
     ctx->data = (byte *) malloc(size * sizeof(byte));
     read_count = fread(ctx->data, sizeof(byte), (size_t) size, file);
     if (read_count <= 0) {
@@ -128,13 +128,13 @@ struct DBContext* init_db(const char* ipdb, int* error_code, ngx_conf_t *cf) {
         return NULL;
     }
     //ngx_conf_log_error(NGX_LOG_NOTICE, cf, 0, "total read %d bytes data", read_count);
-    
+
     fclose(file);
-    
+
     uint indexLength = B2IU(ctx->data);
 
     //ngx_conf_log_error(NGX_LOG_NOTICE, cf, 0, "index len = %d", indexLength);
-    
+
     ctx->index = (byte *) malloc(indexLength * sizeof(byte));
     if (ctx->index == NULL) {
         (*error_code) = 4;
@@ -149,9 +149,9 @@ struct DBContext* init_db(const char* ipdb, int* error_code, ngx_conf_t *cf) {
     }
 
     ngx_memcpy(ctx->index, ctx->data + 4, copy_bytes);
-    
+
     ctx->offset = indexLength;
-    
+
     int flag_bytes = 65536 * sizeof(uint);
     ctx->flag = (uint *) malloc(flag_bytes);
     if (copy_bytes > flag_bytes) {
@@ -159,7 +159,7 @@ struct DBContext* init_db(const char* ipdb, int* error_code, ngx_conf_t *cf) {
     }
     //ngx_conf_log_error(NGX_LOG_NOTICE, cf, 0, "copy %d bytes from index to flag", copy_bytes);
     ngx_memcpy(ctx->flag, ctx->index, copy_bytes);
-    
+
     return ctx;
 }
 
@@ -203,7 +203,7 @@ static ngx_int_t find_result_by_ip(const struct DBContext* ctx, const char *ip, 
 ngx_module_t ngx_http_ipip_module;
 
 static ngx_int_t get_element(ngx_http_request_t *r, char* result, 
-    ngx_http_ipip_conf_t* icf, int index) {
+        ngx_http_ipip_conf_t* icf, int index) {
     struct DBContext *db_ctx = icf->db_ctx;
     int errorcode;
     char ipstr[32];
@@ -250,7 +250,7 @@ static ngx_int_t get_element(ngx_http_request_t *r, char* result,
 }
 
 static ngx_int_t ngx_ipip_set_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, int index) {
+        ngx_http_variable_value_t *v, int index) {
     ngx_http_ipip_conf_t  *icf = ngx_http_get_module_main_conf(r, ngx_http_ipip_module);
 
     ngx_http_ipip_reload_db(icf);
@@ -305,57 +305,57 @@ static ngx_int_t ngx_ipip_set_variable(ngx_http_request_t *r,
 static char *ngx_http_ipip_db(ngx_conf_t *cf, ngx_command_t *cmd, void *conf);
 static char *ngx_ipip_parse_ip(ngx_conf_t *cf, ngx_command_t *cmd, void *conf);
 static char *ngx_ipip_add_parse_ip_variable(ngx_conf_t *cf, ngx_command_t *dummy, 
- void *conf);
+        void *conf);
 
 static ngx_int_t ngx_http_ipip_add_variables(ngx_conf_t *cf);
 
 static ngx_int_t ngx_http_ipip_country_variable(ngx_http_request_t *r, 
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_region_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_city_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_owner_domain_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_isp_domain_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_latitude_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_longitude_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_timezone_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 
 static ngx_int_t ngx_http_ipip_utc_offset_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_china_admin_code_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_idd_code_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 
 static ngx_int_t ngx_http_ipip_country_code_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_continent_code_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_idc_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_base_station_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_country_code3_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 
 static ngx_int_t ngx_http_ipip_european_union_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_currency_code_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 static ngx_int_t ngx_http_ipip_currency_name_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 
 
 
 
 static ngx_int_t ngx_http_ipip_anycast_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data);
+        ngx_http_variable_value_t *v, uintptr_t data);
 
 static void *ngx_http_ipip_create_conf(ngx_conf_t *cf);
 static void ngx_http_ipip_cleanup(void *data);
@@ -366,17 +366,17 @@ static void ngx_http_ipip_cleanup(void *data);
 static ngx_command_t ngx_http_ipip_commands[] = {
 
     { ngx_string("ipip_db"), /* directive */
-      NGX_HTTP_MAIN_CONF|NGX_CONF_TAKE2, /* location context and takes*/
-      ngx_http_ipip_db, /* configuration setup function */
-      NGX_HTTP_MAIN_CONF_OFFSET, /* No offset. Only one context is supported. */
-      0, /* No offset when storing the module configuration on struct. */
-      NULL},
-      { ngx_string("ipip_parse_ip"), /* directive */
-      NGX_HTTP_MAIN_CONF | NGX_HTTP_SRV_CONF | NGX_HTTP_LOC_CONF | NGX_CONF_TAKE1,
-      ngx_ipip_parse_ip, /* configuration setup function */
-      NGX_HTTP_MAIN_CONF_OFFSET | NGX_HTTP_LOC_CONF_OFFSET | NGX_HTTP_SRV_CONF_OFFSET, /* No offset. Only one context is supported. */
-      0, /* No offset when storing the module configuration on struct. */
-      NULL},
+        NGX_HTTP_MAIN_CONF|NGX_CONF_TAKE2, /* location context and takes*/
+        ngx_http_ipip_db, /* configuration setup function */
+        NGX_HTTP_MAIN_CONF_OFFSET, /* No offset. Only one context is supported. */
+        0, /* No offset when storing the module configuration on struct. */
+        NULL},
+    { ngx_string("ipip_parse_ip"), /* directive */
+        NGX_HTTP_MAIN_CONF | NGX_HTTP_SRV_CONF | NGX_HTTP_LOC_CONF | NGX_CONF_TAKE1,
+        ngx_ipip_parse_ip, /* configuration setup function */
+        NGX_HTTP_MAIN_CONF_OFFSET | NGX_HTTP_LOC_CONF_OFFSET | NGX_HTTP_SRV_CONF_OFFSET, /* No offset. Only one context is supported. */
+        0, /* No offset when storing the module configuration on struct. */
+        NULL},
 
     ngx_null_command /* command termination */
 };
@@ -415,89 +415,89 @@ ngx_module_t ngx_http_ipip_module = {
 static ngx_http_variable_t  ngx_http_ipip_vars[] = {
 
     { ngx_string("ipip_country_name"), NULL,
-      ngx_http_ipip_country_variable,
-      0, 0, 0 },
+        ngx_http_ipip_country_variable,
+        0, 0, 0 },
 
     { ngx_string("ipip_region_name"), NULL,
-      ngx_http_ipip_region_variable,
-      0, 0, 0 },
+        ngx_http_ipip_region_variable,
+        0, 0, 0 },
 
     { ngx_string("ipip_city_name"), NULL,
-      ngx_http_ipip_city_variable,
-      0, 0, 0 },
+        ngx_http_ipip_city_variable,
+        0, 0, 0 },
 
     { ngx_string("ipip_owner_domain"), NULL,
-      ngx_http_ipip_owner_domain_variable,
-      0, 0, 0 },
+        ngx_http_ipip_owner_domain_variable,
+        0, 0, 0 },
 
     { ngx_string("ipip_isp_domain"), NULL,
-      ngx_http_ipip_isp_domain_variable,
-      0, 0, 0 },
+        ngx_http_ipip_isp_domain_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_latitude"), NULL,
-      ngx_http_ipip_latitude_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_latitude"), NULL,
+        ngx_http_ipip_latitude_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_longitude"), NULL,
-      ngx_http_ipip_longitude_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_longitude"), NULL,
+        ngx_http_ipip_longitude_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_timezone"), NULL,
-      ngx_http_ipip_timezone_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_timezone"), NULL,
+        ngx_http_ipip_timezone_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_utc_offset"), NULL,
-      ngx_http_ipip_utc_offset_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_utc_offset"), NULL,
+        ngx_http_ipip_utc_offset_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_china_admin_code"), NULL,
-      ngx_http_ipip_china_admin_code_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_china_admin_code"), NULL,
+        ngx_http_ipip_china_admin_code_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_idd_code"), NULL,
-      ngx_http_ipip_idd_code_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_idd_code"), NULL,
+        ngx_http_ipip_idd_code_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_country_code"), NULL,
-      ngx_http_ipip_country_code_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_country_code"), NULL,
+        ngx_http_ipip_country_code_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_continent_code"), NULL,
-      ngx_http_ipip_continent_code_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_continent_code"), NULL,
+        ngx_http_ipip_continent_code_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_idc"), NULL,
-      ngx_http_ipip_idc_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_idc"), NULL,
+        ngx_http_ipip_idc_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_base_station"), NULL,
-      ngx_http_ipip_base_station_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_base_station"), NULL,
+        ngx_http_ipip_base_station_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_country_code3"), NULL,
-      ngx_http_ipip_country_code3_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_country_code3"), NULL,
+        ngx_http_ipip_country_code3_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_european_union"), NULL,
-      ngx_http_ipip_european_union_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_european_union"), NULL,
+        ngx_http_ipip_european_union_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_currency_code"), NULL,
-      ngx_http_ipip_currency_code_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_currency_code"), NULL,
+        ngx_http_ipip_currency_code_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_currency_name"), NULL,
-      ngx_http_ipip_currency_name_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_currency_name"), NULL,
+        ngx_http_ipip_currency_name_variable,
+        0, 0, 0 },
 
-      { ngx_string("ipip_anycast"), NULL,
-      ngx_http_ipip_anycast_variable,
-      0, 0, 0 },
+    { ngx_string("ipip_anycast"), NULL,
+        ngx_http_ipip_anycast_variable,
+        0, 0, 0 },
 
     { ngx_null_string, NULL, NULL, 0, 0, 0 }
 };
 
-static ngx_int_t
+    static ngx_int_t
 ngx_http_ipip_addr_str(ngx_http_request_t *r, char* ipstr)
 {
     ngx_addr_t           addr;
@@ -516,7 +516,7 @@ ngx_http_ipip_addr_str(ngx_http_request_t *r, char* ipstr)
     return NGX_OK;
 }
 
-static void
+    static void
 ngx_http_ipip_cleanup(void *data)
 {
     ngx_http_ipip_conf_t  *icf = data;
@@ -527,7 +527,7 @@ ngx_http_ipip_cleanup(void *data)
     }
 }
 
-static void *
+    static void *
 ngx_http_ipip_create_conf(ngx_conf_t *cf)
 {
     ngx_pool_cleanup_t     *cln;
@@ -551,93 +551,93 @@ ngx_http_ipip_create_conf(ngx_conf_t *cf)
 
 static ngx_int_t
 ngx_http_ipip_region_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
 
     return ngx_ipip_set_variable(r, v, NGX_IPIP_REGION_NAME_COEE);
 }
 static ngx_int_t 
 ngx_http_ipip_city_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
 
     return ngx_ipip_set_variable(r, v, NGX_IPIP_CITY_NAME_CODE);
 }
 static ngx_int_t 
 ngx_http_ipip_owner_domain_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_OWNER_DOMAIN_CODE);
 }
 static ngx_int_t ngx_http_ipip_isp_domain_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_ISP_DOMAIN_CODE);
 }
 static ngx_int_t ngx_http_ipip_latitude_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_LATITUDE_CODE);
 }
 static ngx_int_t ngx_http_ipip_longitude_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_LONGITUDE_CODE);
 }
 static ngx_int_t
 ngx_http_ipip_country_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_COUNTRY_NAME_CODE);
 }
 static ngx_int_t
 ngx_http_ipip_timezone_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_TIMEZONE_CODE);
 }
 static ngx_int_t ngx_http_ipip_utc_offset_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_UTC_OFFSET_CODE);
 }
 static ngx_int_t ngx_http_ipip_china_admin_code_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_CHINA_ADMIN_CODE);
 }
 static ngx_int_t ngx_http_ipip_idd_code_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_IDD_CODE_CODE);
 }
 static ngx_int_t ngx_http_ipip_country_code_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_COUNTRY_CODE_CODE);
 }
 static ngx_int_t ngx_http_ipip_continent_code_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_CONTINENT_CODE_CODE);
 }
 static ngx_int_t ngx_http_ipip_idc_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_IDC_CODE);
 }
 static ngx_int_t ngx_http_ipip_base_station_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_BASE_STATION_CODE);
 }
 static ngx_int_t ngx_http_ipip_country_code3_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_COUNTRY_CODE3);
 }
 static ngx_int_t ngx_http_ipip_european_union_variable(ngx_http_request_t *r, 
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_EUROPEAN_UNION);
 }
 static ngx_int_t ngx_http_ipip_currency_code_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_CURRENCY_CODE);
 }
 static ngx_int_t ngx_http_ipip_currency_name_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_CURRENCY_NAME);   
 }
 static ngx_int_t ngx_http_ipip_anycast_variable(ngx_http_request_t *r,
-    ngx_http_variable_value_t *v, uintptr_t data) {
+        ngx_http_variable_value_t *v, uintptr_t data) {
     return ngx_ipip_set_variable(r, v, NGX_IPIP_ANYCAST_CODE);
 }
 
-static ngx_int_t
+    static ngx_int_t
 ngx_http_ipip_add_variables(ngx_conf_t *cf)
 {
     ngx_http_variable_t  *var, *v;
@@ -652,7 +652,7 @@ ngx_http_ipip_add_variables(ngx_conf_t *cf)
         var->data = v->data;
     }
     ngx_conf_log_error(NGX_LOG_NOTICE, cf, 0,
-                               "enter ipip add variables");
+            "enter ipip add variables");
 
     return NGX_OK;
 }
@@ -676,35 +676,35 @@ static char *ngx_http_ipip_db(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
     int ret = stat((char *)(icf->db_name.data), &attr);
     if (ret != 0) {
         ngx_conf_log_error(NGX_LOG_EMERG, cf, 0,
-                           "stat db file failed for : %s", (icf->db_name.data));
+                "stat db file failed for : %s", (icf->db_name.data));
         return NGX_CONF_ERROR;
     }
 
 
-   // ngx_time_init();
+    // ngx_time_init();
 
     icf->last_check = icf->last_change = ngx_time();
 
     interval = ngx_parse_time(&value[2], 1);
 
     ngx_conf_log_error(NGX_LOG_NOTICE, cf, 0,
-                           "check interval = %d second", (ngx_int_t)interval);
+            "check interval = %d second", (ngx_int_t)interval);
 
     if (interval == (time_t) NGX_ERROR) {
         ngx_conf_log_error(NGX_LOG_EMERG, cf, 0,
-                           "invalid interval for auto_reload \"%V\"",
-                           value[1]);
+                "invalid interval for auto_reload \"%V\"",
+                value[1]);
         return NGX_CONF_ERROR;
     }
     icf->check_interval = interval;
 
     if (icf->db_ctx != NULL) {
         ngx_conf_log_error(NGX_LOG_NOTICE, cf, 0,
-                               "ipip open db = %s success", (char *) value[1].data);
+                "ipip open db = %s success", (char *) value[1].data);
     } else {
         ngx_conf_log_error(NGX_LOG_NOTICE, cf, 0,
-                               "ipip open db = %s failed, error code = %d",
-                               (char *) value[1].data, error_code);
+                "ipip open db = %s failed, error code = %d",
+                (char *) value[1].data, error_code);
         return NGX_CONF_ERROR;
     }
 
@@ -721,11 +721,11 @@ static ngx_int_t ngx_http_ipip_reload_db(ngx_http_ipip_conf_t  *icf) {
     if (icf->check_interval > 0
             && icf->last_check + icf->check_interval <= ngx_time()) {
         icf->last_check = ngx_time();
-        
+
         /*int fd = ngx_open_file((char *)(icf->db_name.data), NGX_FILE_RDONLY, NGX_FILE_OPEN, 0);
-        if (fd < 0) {
-            fprintf(stderr, "open file failed for : %s\n", strerror(errno));
-        }*/
+          if (fd < 0) {
+          fprintf(stderr, "open file failed for : %s\n", strerror(errno));
+          }*/
         if (stat((char *)(icf->db_name.data), &attr) != 0) {
             return NGX_ERROR;
         }
@@ -765,11 +765,11 @@ static char *ngx_ipip_parse_ip(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 } /* ngx_ipip_parse_ip */
 
 static char *ngx_ipip_add_parse_ip_variable(ngx_conf_t *cf, ngx_command_t *dummy, 
-    void *handler_conf) {
+        void *handler_conf) {
     ngx_str_t* value;
     ngx_str_t name, source;
     ngx_http_compile_complex_value_t ccv;
-    
+
     ngx_http_ipip_conf_t* icf = ngx_http_conf_get_module_main_conf(cf, ngx_http_ipip_module);
 
     value = cf->args->elts;
@@ -787,7 +787,7 @@ static char *ngx_ipip_add_parse_ip_variable(ngx_conf_t *cf, ngx_command_t *dummy
 
     if (ngx_http_compile_complex_value(&ccv) != NGX_OK) {
         ngx_conf_log_error(NGX_LOG_EMERG, cf, 0,
-                                "unable to compile \"%V\" for \"$%V\"", &source, &name);
+                "unable to compile \"%V\" for \"$%V\"", &source, &name);
         return NGX_CONF_ERROR;
     }
     return NGX_CONF_OK;
