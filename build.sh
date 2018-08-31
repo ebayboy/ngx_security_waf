@@ -74,9 +74,10 @@ build_nginx(){
         --add-module=../ngx_modules/nginx-sticky-module-ng  \
         --add-module=../ngx_modules/nginx_upstream_check_module  \
         --add-module=../ngx_modules/nginx-rtmp-module   \
-        --add-module=../ngx_modules/ngx-libinjection    \
-        --add-dynamic-module=../ModSecurity-nginx   \
-        --add-module=../ngx_modules/nginx-ipip-module  
+        --add-dynamic-module=../ModSecurity-nginx   
+
+        #--add-module=../ngx_modules/ngx-libinjection    
+        #--add-module=../ngx_modules/nginx-ipip-module  
 		
     make -j$CPU_COUNT
     make install
@@ -127,8 +128,10 @@ build_config(){
     cp -af conf/* $NGX_CONF_PATH
 }
 
-build_hLive(){
-    cp -af vendor/hLive/  /usr/local/nginx/html/ 
+build_sites(){
+    #config site www.qudd-code.com
+    mkdir -p /usr/local/nginx/html/www.qudd-code.com
+    cp -af vendor/hLive/  /usr/local/nginx/html/www.qudd-code.com
 }
 
 if [ "$1" == "GeoIP" ]
@@ -146,23 +149,22 @@ then
 elif [ "$1" == "config" ]
 then
     build_config 
-elif [ "$1" == "hLive" ]
+elif [ "$1" == "www.qudd-code.com" ]
 then
-    build_hLive 
+    build_www.qudd-code.com 
 elif [ "$1" == "min" ]
 then
     build_nginx_min
     build_config
-    build_hLive
+    build_www.qudd-code.com
 elif [ "$1" == "nginx_min" ]
 then
     build_nginx_min
 else
     build_GeoIP
     build_Modsecurity
-    build_libinjection
     build_nginx
     build_config
-    build_hLive
+    build_sites
 fi
 

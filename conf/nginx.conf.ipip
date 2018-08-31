@@ -26,6 +26,10 @@ http {
     modsecurity off;
     modsecurity_rules_file  /usr/local/nginx/conf/main.conf;
 
+#used for ipip module
+    ipip_db /usr/local/nginx/conf/ipip_station.datx 1576800m; 
+    ipip_parse_ip $remote_addr; 
+
     geoip_country /usr/local/nginx/conf/GeoIP.dat;
 
     fastcgi_param GEOIP_COUNTRY_CODE $geoip_country_code;
@@ -56,20 +60,19 @@ http {
     #hls server
     server {  
         listen       80;
-        listen 443 ssl;
         server_name www.qudd-code.com;
+        listen 443 ssl;
 
-#如果同时监听80和443, 则ssl on;要注掉
-#ssl on;
-        ssl_certificate         /usr/local/nginx/conf/ssl/www.qudd-code.com/server.crt;
-        ssl_certificate_key     /usr/local/nginx/conf/ssl/www.qudd-code.com/server.key;
-        ssl_dhparam             /usr/local/nginx/conf/ssl/www.qudd-code.com/server.dhparam.pem;
+        ssl on;
+        ssl_certificate         /usr/local/nginx/ssl/www.qudd-code.com/server.crt;
+        ssl_certificate_key     /home/ubuntu/www/ssl/www.qudd-code.com/server.key;
+        ssl_dhparam             /home/ubuntu/www/ssl/www.qudd-code.com/dhparam.pem;
 
 #charset koi8-r;  
 #access_log  logs/host.access.log  main;  
 
         location / {  
-            root   /usr/local/nginx/html/www.qudd-code.com;  
+            root   /usr/local/nginx/html;  
             index  index.html index.htm;  
         }  
 
@@ -86,6 +89,12 @@ http {
     server {
         listen 81 backlog=8192 fastopen=1024 deferred reuseport;
 
+#libinjection config
+        libinjection_body on;
+        libinjection on;
+        libinjection_patterns foo;
+        libinjection_patterns ba?;
+
         location / {
             proxy_http_version 1.1;
             proxy_set_header Connection "";
@@ -93,6 +102,30 @@ http {
             proxy_set_header X-Forwarded-For $remote_addr;
             proxy_next_upstream_tries 3;
             
+
+#used for ipip
+            if ($ipip_country_code = HK) {
+                return 403;
+            }
+
+            if ($ipip_country_code ~* "(MO|TW)") {
+                return 403;
+            }
+
+            if ($ipip_country_code !~ CN) {
+                return 403;
+            }                
+            add_header ip $http_x_forwarded_for;
+            add_header country_code $ipip_country_code;
+            add_header country $ipip_country_name;
+            add_header province $ipip_region_name;
+            add_header city $ipip_city_name;
+            add_header owner $ipip_owner_domain;
+            add_header isp $ipip_isp_domain;
+            add_header latitude $ipip_latitude;
+            add_header longitude $ipip_longitude;
+
+
             proxy_pass http://backend;
             proxy_next_upstream error timeout http_500 http_502 http_503 http_504;
         }
@@ -118,7 +151,7 @@ rtmp {
         application hls {  #rtmp推流请求路径  
             live on;    
             hls on;    
-            hls_path /usr/local/nginx/html/www.qudd-code.com/hls;    
+            hls_path /usr/local/nginx/html/hls;    
             hls_fragment 5s;    
 
             recorder rec1{ #save to flv
