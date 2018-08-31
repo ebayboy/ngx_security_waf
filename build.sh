@@ -12,8 +12,8 @@ NGX_PATH="/usr/local/nginx"
 NGX_BIN_PATH="/usr/local/nginx/sbin/"
 NGX_CONF_PATH="/usr/local/nginx/conf"
 NGX_CONF_FILE_PATH="/usr/local/nginx/conf/nginx.conf"
-NGX_PID_PATH="/usr/local/nginx/logs/nginx.pid"
-NGX_LOCK_PATH="/usr/local/nginx/logs/nginx.lock"
+NGX_PID_PATH="/usr/local/nginx/run/nginx.pid"
+NGX_LOCK_PATH="/usr/local/nginx/run/nginx.lock"
 
 GEOIP_PATH="/usr/local/nginx/GeoIP"
 
